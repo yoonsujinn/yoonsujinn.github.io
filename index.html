@@ -8,8 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./greenCard.css">
+    
   </head>
 <body>
+    <div class="skip">
+        <a href="#greenCardContent"> 본문 바로가기</a>
+    </div>
     <header>
         <nav>
                 <div class="headerLogo" >
@@ -57,7 +61,7 @@
         </nav>
         
     </header>
-    <section class="section_1">
+    <section id="greenCardContent"class="section_1">
         <article>
             <div class="leftImg">
                 <div class="leftMoveBg"></div>
@@ -77,38 +81,12 @@
     <section></section>
     
 </body>
+<script src="./greenCard.js"></script>
+
 
 <script>
 
-    let imgArr = [
-        'https://www.green-card.co.kr/pc/assets/images/bg/bg-main-visual-bg-01.png',
-        'https://www.green-card.co.kr/pc/assets/images/bg/bg-main-visual-bg-02.png',
-        'https://www.green-card.co.kr/pc/assets/images/bg/bg-main-visual-bg-03.png',
-    ]
-    let imgArrindex = 0;
-    const leftMoveBg = document.querySelector('.leftMoveBg')
-    setInterval(function(){
-        if(imgArrindex <= imgArr.length) {
-            console.log (imgArrindex-1)
-            imgArrindex ++;
-        }else if(imgArrindex >= imgArr.length) {
-        console.log (imgArrindex-1)
-        imgArrindex = 0;
-
-        }
-    },1000)
-
-
-        
-
-        // leftMoveBg.style.backgroundImage = "url('https://www.green-card.co.kr/pc/assets/images/bg/bg-main-visual-bg-01.png')";
-
-
     
-
-
-   
-
 
 </script>
 
