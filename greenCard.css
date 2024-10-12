@@ -5,9 +5,15 @@
         font-weight: 400;
         font-style: normal;
     } */
+
     * {
-        margin: 0; padding: 0;  list-style: none; text-decoration: none; font-family: "Gowun Dodum", sans-serif;;
+        margin: 0; padding: 0;  list-style: none; text-decoration: none; font-family: "Gowun Dodum", sans-serif;; 
         }
+        /* *:focus::before{
+            content: 'sdasds';
+            outline: 1px solid;
+            color: #111;
+        } */
         html,body{
             width: 100%;
             height: 100%; 
@@ -27,21 +33,21 @@
        
        /* 상단nav */
     
-    
+        .logoLink {
+            display: block;
+            width: 120px;
+            height: 40px;
+            
+        }
        nav .headerLogo{
             position: relative;
             z-index: 5;
             width: 120px;
-            height: 90px;
+            height: 40px;
             background: url('./images/logo.svg')  center / contain no-repeat;
         }
     
-        header .mainMenu:hover ~ .logoLink{
-            opacity: 1;
-            background: url('./images/logo.svg')  center / contain no-repeat;
-            background: red;
-        }
-    
+ 
     
         nav {
             display: flex;
@@ -122,7 +128,7 @@
             height: 45px;
             font-size: 16px;
             line-height: 45px;
-            transition: 0.3s;
+            transition: 0.5s;
             color: #111;
             margin: 0 auto;
         }
@@ -177,7 +183,7 @@
             height: 342px;
             top: -252px;
             left: 0;
-            transition: 0.2s;
+            transition: 0.5s;
             background-color: #fff;
     }
         .head_bottomCover:hover,
