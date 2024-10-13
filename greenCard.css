@@ -139,6 +139,7 @@ ul.innerUl {
     opacity: 0;
     cursor: none;
     pointer-events: none;
+    transition: 0.3s;
 }
 ul.mainMenu:focus-within .innerUl,
 ul.mainMenu:hover .innerUl {
@@ -153,7 +154,6 @@ ul.mainMenu li ul.innerUl li a {
     height: 45px;
     font-size: 16px;
     line-height: 45px;
-    transition: 0.5s;
     color: #111;
     margin: 0 auto;
 }
@@ -202,7 +202,6 @@ nav div.navApp a {
     height: 342px;
     top: -252px;
     left: 0;
-    transition: 0.5s;
     background-color: #fff;
 }
 .head_bottomCover:hover,
@@ -221,7 +220,6 @@ li.child:hover ~ .head_bottomCover .headerImg {
 
 .headerImg {
     width: 1304px;
-    /* margin: 75px auto 0; */
     margin: 140px auto 0;
     height: 110px;
     opacity: 0;
@@ -256,8 +254,12 @@ section.section_1 {
 /* section1   */
 
 section.section_1 article {
-    width: 40%;
+    display: flex;
+    width: 34%;
     height: 85%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 section.section_1 .leftImg {
     display: flex;
@@ -266,7 +268,7 @@ section.section_1 .leftImg {
     position: relative;
     width: 615px;
     height: 500px;
-    margin: 100px auto 0;
+    /* margin: 100px auto 0; */
     background: url("./images/bg-main-visual-svg.png") 2px center / 112% no-repeat;
 }
 
@@ -395,22 +397,59 @@ section.section_1 .leftImg {
 }
 
 
-.rightTitle {
+.rightTitleWrap {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 645px;
-    height: 80px;
+    width: 502px;
+    height: 70px;
 }
 
-.rightTitle > .rightTitle {
+.rightTitleWrap > .rightTitle {
+    width: calc(100% / 10);
     height: 100%;
-    outline: 1px solid;
 }
+.rightTitleWrap > .rightTitle.rightTitle_1 {background: url('./images/letter-G.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_2 {background: url('./images/letter-R.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_3 {background: url('./images/letter-E.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_4 {background: url('./images/letter-E.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_5 {background: url('./images/letter-N.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_6 {width: calc(100% / 18);}
+.rightTitleWrap > .rightTitle.rightTitle_7 {background: url('./images/letter-C.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_8 {background: url('./images/letter-A.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_9 {background: url('./images/letter-R.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_10 {background: url('./images/letter-D.svg') center / auto 55px no-repeat;}
+.rightTitleWrap > .rightTitle.rightTitle_10:after {
+    content: '';
+    display: block;
+    position: relative;
+    top: 4px;
+    right: -15px;
+    width: 62px;
+    height: 90px;
+    height: 17px;
+    background: url(./images/letter-leaf.svg) center / contain no-repeat;
+    }
+
+
+.section1_right h1 {
+    color: #fff;
+    margin: 21px 0;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px rgb(15 175 122 / 60%);
+}
+
+.rightApp {
+    border-radius: 30px;
+    outline:2px solid;
+    color: #fff;
+    font-size: 19px;
+    padding: 5px 22px;
+}
+
 
 
 .section_1_bottom {
-
     position: absolute;
     bottom: 0;
     width: 100%;
