@@ -278,7 +278,7 @@ section.section_1 .leftImg {
     background-position: bottom center;
     background-size: 86%;
     background-repeat: no-repeat;
-    background-image: url("./images/bg-main-visual-bg-01.png");
+    background-image: url("./images/bg-main-visual-bg-03.png");
 
 }
 
@@ -286,12 +286,11 @@ section.section_1 .leftImg {
 
 .leftChar {
     position: absolute;
-    right: 33px;
-    top: 185px;
-    width: 229px;
-    height: 160px;
-    animation: charAni 2s infinite; 
-
+    right: 36px;
+    top: 190px;
+    width: 228px;
+    height: 157px;
+    animation: charAni 2s infinite;
 }
 
 @keyframes charAni {
@@ -310,7 +309,12 @@ section.section_1 .leftImg {
 
 .leftMoveBg.leftMoveBg_1 + .leftChar{
     background: url("./images/section1_char_1.png") 45px 7px / 61% no-repeat;
-
+}
+.leftMoveBg.leftMoveBg_2 + .leftChar{
+    background: url("./images/section1_char_2.png") 25px 26px / 56% no-repeat;
+}
+.leftMoveBg.leftMoveBg_3 + .leftChar{
+    background: url("./images/section1_char_3.png") 96px 33px / 47% no-repeat;
 }
 
 
@@ -322,55 +326,87 @@ section.section_1 .leftImg {
     height: 61px;
     animation: none;
     background: url(./images/section1_char_1_obj_1.png) center / 100% no-repeat;
-    animation: leftCharObj_1 1.9s infinite;
+    animation: leftCharObj_1 2s infinite    ;
 }
 @keyframes leftCharObj_1 {
     0% {
         transform: translate(0,0); 
-        transform: translate(0,0); 
     }
     40% {
-        transform: translate(-10px,-10px); 
-        transform: translate(-10px,-10px); 
+        transform: translate(-6px,-10px);
     }
     100% {
         transform: translate(0,0); 
-        transform: translate(0,0); 
-
     }
 }
 .leftMoveBg.leftMoveBg_1 ~.leftCharObj_2{
     position: absolute;
-    right: 37px;
-    top: 185px;
+    right: 65px;
+    top: 170px;
     width: 45px;
     height: 61px;
     animation: none;
     background: url(./images/section1_char_1_obj_2.png) center / 100% no-repeat;
-    animation: leftCharObj_1 1.9s infinite;
+    animation: leftCharObj_2 2s infinite;
 }
-/* @keyframes leftCharObj_1 {
+@keyframes leftCharObj_2 {
     0% {
         transform: translate(0,0); 
+    }
+    5% {
         transform: translate(0,0); 
     }
     40% {
-        transform: translate(-10px,-10px); 
-        transform: translate(-10px,-10px); 
+        transform: translate(6px,-10px);
     }
     100% {
         transform: translate(0,0); 
-        transform: translate(0,0); 
+}
+}
 
+.leftMoveBg.leftMoveBg_3 ~.leftCharObj_1{
+    position: absolute;
+    right: 47px;
+    top: 176px;
+    width: 43px;
+    height: 44px;
+    animation: none;
+    background: url(./images/section1_char_3_obj_1.png) center / 100% no-repeat;
+    animation: hartAni 1.5s infinite;
+    rotate: 2deg;
+}
+@keyframes hartAni {
+    0% {
+        opacity: 1;
+        scale: 0;
+        transform: translate(-10px,-10px);
     }
-} */
+    50% {
+        opacity: 1;
+        scale: 0;
+        transform: translate(-10px,-10px);
+    }
+
+    100% {
+        opacity: 0;
+        scale: 1;
+        transform: translate(0,0);
+    }
+}
 
 
+.rightTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 645px;
+    height: 80px;
+}
 
-
-
-
-
+.rightTitle > .rightTitle {
+    height: 100%;
+    outline: 1px solid;
+}
 
 
 .section_1_bottom {
