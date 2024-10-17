@@ -10,6 +10,9 @@ const leftMoveBg = document.querySelector('.leftMoveBg')
 let imgArrindex = 0;
 
 
+
+
+
 // section1 - 캐릭터 4초에 한번씩 변경되는 스크립트
     setInterval(function(){
         if(imgArrindex < imgArr1.length) {
