@@ -60,9 +60,9 @@ function updateScreenSize() {
     
     window.addEventListener("scroll",function() {
         let ScrollPosition = window.scrollY; // 스크롤 위치 확인
-         if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
+        if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
             rightTitle.classList.add('on')
-         }else {
+        }else {
             rightTitle.classList.remove('on')
 
          }
