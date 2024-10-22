@@ -9,7 +9,7 @@ let imgArr1 = [
 const leftMoveBg = document.querySelector('.leftMoveBg')
 const rightTitle =  document.querySelectorAll('.rightTitle')
 let imgArrindex = 0;
-let scrReset = 0;
+let scrolling;
 const scWidth = window.innerWidth;
 const scHeight = window.innerHeight;
 window.addEventListener("resize",updateScreenSize)
@@ -38,39 +38,45 @@ function updateScreenSize() {
     },4000)
 
 
-    setTimeout(() => {
         window.addEventListener("wheel", function(event) {
-            let ScrollXY = event.deltaY; //스크롤 방향 확인
-            let ScrollPosition = window.scrollY; // 스크롤 위치 확인
+            let scrollXY = event.deltaY; //스크롤 방향 확인
+            let scrollPosition = window.scrollY; // 스크롤 위치 확인
+                setTimeout(() => {
+                if(scrollXY > 0 ) {
+                    if(scrollPosition <= 700) {
+                        window.scroll({
+                        top: scHeight*1, 
+                        behavior: 'smooth' 
+                        });
+                    }else if(scrollPosition <= 1400) {
+                        window.scroll({
+                            top: scHeight*2, 
+                            behavior: 'smooth' 
+                        });
+                    }else if(scrollPosition <= 2100) {
+                        window.scroll({
+                            top: scHeight*3, 
+                            behavior: 'smooth' 
+                        });
+                    }
+                }
+                 g
+                });  
+            }, 1000);
     
-            if(ScrollXY > 0) {
-                window.scroll({
-                    top: ScrollPosition+scHeight, // 이동할 y좌표
-                    behavior: 'smooth' // 부드럽게 스크롤
-                });
-            }else{
-                window.scroll({
-                    top: ScrollPosition-scHeight, // 이동할 y좌표
-                    behavior: 'smooth' // 부드럽게 스크롤
-                });
-            }
-        });
-    }, 1000);
-
-    
-    window.addEventListener("scroll",function() {
-        let ScrollPosition = window.scrollY; // 스크롤 위치 확인
-        rightTitle.forEach(e => {
-            if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
-            e.classList.add('on')
-            }else {
-                e.classList.remove('on')
-            }
+    // window.addEventListener("scroll",function() {
+    //     let ScrollPosition = window.scrollY; // 스크롤 위치 확인
+    //     rightTitle.forEach(e => {
+    //         if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
+    //         e.classList.add('on')
+    //         }else {
+    //             e.classList.remove('on')
+    //         }
                 
-            });
+    //         });
         
 
-    })
+    // })
 
 
 
