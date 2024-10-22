@@ -7,11 +7,14 @@ let imgArr1 = [
     './images/bg-main-visual-bg-03.png',
 ]
 const leftMoveBg = document.querySelector('.leftMoveBg')
+const rightTitle =  document.querySelectorAll('.rightTitle')
 let imgArrindex = 0;
-let scWidth = window.innerWidth;
-let scHeight = window.innerHeight;
 let scrReset = 0;
-window.addEventListener("resize",updateScreenSize);
+const scWidth = window.innerWidth;
+const scHeight = window.innerHeight;
+window.addEventListener("resize",updateScreenSize)
+
+
 
 function updateScreenSize() {
     scWidth = window.innerWidth;
@@ -51,12 +54,20 @@ function updateScreenSize() {
                     behavior: 'smooth' // 부드럽게 스크롤
                 });
             }
-            console.log(ScrollPosition)
-    
         });
-    
-        
     }, 1000);
+
+    
+    window.addEventListener("scroll",function() {
+        let ScrollPosition = window.scrollY; // 스크롤 위치 확인
+         if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
+            rightTitle.classList.add('on')
+         }else {
+            rightTitle.classList.remove('on')
+
+         }
+
+    })
 
 
 

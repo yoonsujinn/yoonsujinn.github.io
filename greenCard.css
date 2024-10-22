@@ -409,9 +409,23 @@ section.section_1 .leftImg {
 }
 
 .rightTitleWrap > .rightTitle {
+    position: relative;
+    top: 25px;
     width: calc(100% / 10);
     height: 100%;
+    transform: scaleY(0.1);
+    transition: 1;
 }
+
+.rightTitle.on {
+    top: 0;
+    transform: scaleY(1);
+
+
+}
+
+
+
 .rightTitleWrap > .rightTitle.rightTitle_1 {background: url('./images/letter-G.svg') center / auto 55px no-repeat;}
 .rightTitleWrap > .rightTitle.rightTitle_2 {background: url('./images/letter-R.svg') center / auto 55px no-repeat;}
 .rightTitleWrap > .rightTitle.rightTitle_3 {background: url('./images/letter-E.svg') center / auto 55px no-repeat;}
