@@ -8,8 +8,15 @@ let imgArr1 = [
 ]
 const leftMoveBg = document.querySelector('.leftMoveBg')
 let imgArrindex = 0;
+let scWidth = window.innerWidth;
+let scHeight = window.innerHeight;
+let scrReset = 0;
+window.addEventListener("resize",updateScreenSize);
 
-
+function updateScreenSize() {
+    scWidth = window.innerWidth;
+    scHeight = window.innerHeight;
+}
 
 
 
@@ -29,7 +36,17 @@ let imgArrindex = 0;
         }
     },4000)
 
+    window.addEventListener("wheel", function(event) {
+        let ScrollPosition = event.deltaY; //스크롤 방향 확인
+        if(ScrollPosition > 0) {
+            console.log('내려간다~~');
+        }else{
+            console.log('올라간다~~')
+        }
+        let ScrollPosition2 = window.scrollY; 
+        console.log(ScrollPosition2)
 
-        
+    });
+
 
 

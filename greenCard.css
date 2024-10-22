@@ -242,15 +242,17 @@ section.section_1 {
     min-width: 1270px;
 
 }
-/* section:nth-child(2) {
-            background: rgb(200, 201, 202);
-        }
-        section:nth-child(3) {
-            background: rgb(255, 243, 243);
-        }
-        section:nth-child(4) {
-            background: rgb(192, 192, 214);
-        } */
+
+section:nth-child(4) {
+    background: rgb(192, 192, 214);
+}
+section:nth-child(5) {
+    background: rgb(47, 47, 112);
+}
+section:nth-child(6) {
+    background: rgb(15, 167, 116);
+}
+
 
 /* section1   */
 
