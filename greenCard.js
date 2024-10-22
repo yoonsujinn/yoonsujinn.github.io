@@ -60,12 +60,15 @@ function updateScreenSize() {
     
     window.addEventListener("scroll",function() {
         let ScrollPosition = window.scrollY; // 스크롤 위치 확인
-        if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
-            rightTitle.classList.add('on')
-        }else {
-            rightTitle.classList.remove('on')
-
-         }
+        rightTitle.forEach(e => {
+            if(ScrollPosition >= 0 ||ScrollPosition <= 500) {
+            e.classList.add('on')
+            }else {
+                e.classList.remove('on')
+            }
+                
+            });
+        
 
     })
 
