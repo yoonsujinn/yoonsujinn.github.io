@@ -18,8 +18,6 @@ function updateScreenSize() {
     scHeight = window.innerHeight;
 }
 
-
-
 // section1 - 캐릭터 4초에 한번씩 변경되는 스크립트
     setInterval(function(){
         if(imgArrindex < imgArr1.length) {
@@ -36,17 +34,29 @@ function updateScreenSize() {
         }
     },4000)
 
-    window.addEventListener("wheel", function(event) {
-        let ScrollPosition = event.deltaY; //스크롤 방향 확인
-        if(ScrollPosition > 0) {
-            console.log('내려간다~~');
-        }else{
-            console.log('올라간다~~')
-        }
-        let ScrollPosition2 = window.scrollY; 
-        console.log(ScrollPosition2)
 
-    });
+    setTimeout(() => {
+        window.addEventListener("wheel", function(event) {
+            let ScrollXY = event.deltaY; //스크롤 방향 확인
+            let ScrollPosition = window.scrollY; // 스크롤 위치 확인
+    
+            if(ScrollXY > 0) {
+                window.scroll({
+                    top: ScrollPosition+scHeight, // 이동할 y좌표
+                    behavior: 'smooth' // 부드럽게 스크롤
+                });
+            }else{
+                window.scroll({
+                    top: ScrollPosition-scHeight, // 이동할 y좌표
+                    behavior: 'smooth' // 부드럽게 스크롤
+                });
+            }
+            console.log(ScrollPosition)
+    
+        });
+    
+        
+    }, 1000);
 
 
 
