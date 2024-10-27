@@ -15,6 +15,10 @@ html {
     height: 100%;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+  }
+
 .skip {
     position: absolute;
     width: 100%;
@@ -236,6 +240,8 @@ section {
     padding: 90px 0 0;
     box-sizing: border-box;
     flex-direction: row;
+    overflow: hidden;
+
 }
 section.section_1 {
     background: #25C18D;
