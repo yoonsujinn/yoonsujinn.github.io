@@ -36,12 +36,10 @@ let imgArrindex;
             event.preventDefault();
             let scrollXY = event.deltaY; //스크롤 방향 확인
             let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
-            console.log(scHeight);
-            console.log(scrollPosition);
-            console.log(scrollXY);
-            console.log('-------------------------------')
+            console.log(scrollPosition,'현재높이');
+            console.log(scHeight,'현재높이');
                 if(scrollXY > 0 ) { //내려갈때
-                    if(scrollPosition <scHeight) {
+                    if(scrollPosition < scHeight) {
                         setTimeout(() => {
                             window.scroll({
                                 top: scHeight*1, 
@@ -55,33 +53,97 @@ let imgArrindex;
                                 behavior: 'smooth' 
                             });
                         },30);
-                    }else if(scrollPosition < scHeight*3) {
+                    }else if(scrollPosition <= scHeight*3) {
                         setTimeout(() => {
                             window.scroll({
                                 top: scHeight*3, 
                                 behavior: 'smooth' 
                             });
                         },30);
-                    }
-                }else if( scrollXY < 0) { //올라갈때
-                    if(scrollPosition => scHeight) {
+                    }else if(scrollPosition <= scHeight*4) {
                         setTimeout(() => {
                             window.scroll({
-                                top: 0, 
-                                behavior: 'smooth' 
-                            });
-                        },30);
-                    }else if(scrollPosition => scHeight*3) {
-                        setTimeout(() => {
-                            window.scroll({
-                                top: scHeight*2,
+                                top: scHeight*4, 
                                 behavior: 'smooth' 
                             });
                         },30);
                     }
+                }else if( scrollXY < 50) { //올라갈때
+                    // console.log(scHeight,'화면높이');
+                    // console.log(scrollPosition,'현재높이');
+                    // console.log('-------------------------------')
+                        // if(scrollPosition == scHeight) {
+                        //     setTimeout(() => {
+                        //         window.scroll({
+                        //             top: 0, 
+                        //             behavior: 'smooth' 
+                        //         });
+                        //     },30);
+                        // }
+                        // else if(scrollPosition >= scHeight*2) {
+                        //     setTimeout(() => {
+                        //         window.scroll({
+                        //             top: scHeight, 
+                        //             behavior: 'smooth' 
+                        //         });
+                        //     },30);
+                        // }
+                        // else if(scrollPosition >= scHeight*3) {
+                        //     console.log('33333')
+                        //     setTimeout(() => {
+                        //         window.scroll({
+                        //             top: scHeight*2, 
+                        //             behavior: 'smooth' 
+                        //         });
+                        //     },30);
+                        // }
+                        // else if(scrollPosition >= scHeight*4) {
+                        //     setTimeout(() => {
+                        //         window.scroll({
+                        //             top: scHeight*3, 
+                        //             behavior: 'smooth' 
+                        //         });
+                        //     },30);
+                        // }
+                        // else if(scrollPosition >= scHeight*5) {
+                        //     setTimeout(() => {
+                        //         window.scroll({
+                        //             top: scHeight*5, 
+                        //             behavior: 'smooth' 
+                        //         });
+                        //     },30);
+                        // }
+                        if (scrollPosition === scHeight) {
+                            window.scroll({ top: 0, behavior: 'smooth' });
+                        } else if (scrollPosition >= scHeight && scrollPosition < scHeight * 2) {
+                            window.scroll({ top: scHeight, behavior: 'smooth' });
+                        } else if (scrollPosition >= scHeight * 2 && scrollPosition < scHeight * 3) {
+                            window.scroll({ top: scHeight * 2, behavior: 'smooth' });
+                        } else if (scrollPosition >= scHeight * 3 && scrollPosition < scHeight * 4) {
+                            window.scroll({ top: scHeight * 3, behavior: 'smooth' });
+                        } else if (scrollPosition >= scHeight * 4) {
+                            window.scroll({ top: scHeight * 4, behavior: 'smooth' });
+                        }
                     
                 }
             }, { passive: false });
+
+            function page1_motion() {
+                console.log('1페이지 도착!~~!')
+            }
+    
+            function page2_motion() {
+                console.log('2페이지 도착!~~!')
+            }
+
+            function page3_motion() {
+                console.log('1페이지 도착!~~!')
+            }
+            function page4_motion() {
+                console.log('1페이지 도착!~~!')
+            }
+
+
 
 
 
