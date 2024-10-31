@@ -90,10 +90,7 @@ nav {
     z-index: 5;
     /* border-bottom: 2px solid #444; */
 }
-header:hover nav {
-    /* border-bottom: 2px solid #bdbdbd; */
 
-}
 .mainMenu {
     display: flex;
     width: 750px;
@@ -143,7 +140,6 @@ ul.innerUl {
     opacity: 0;
     cursor: none;
     pointer-events: none;
-    transition: 0.3s;
 }
 ul.mainMenu:focus-within .innerUl,
 ul.mainMenu:hover .innerUl {

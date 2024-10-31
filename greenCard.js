@@ -1,6 +1,4 @@
 
-
-
 let imgArr1 = [
     './images/bg-main-visual-bg-01.png',
     './images/bg-main-visual-bg-02.png',
@@ -18,8 +16,8 @@ function updateScreenSize() {
     scHeight = window.innerHeight;
 }
 // section1 - 캐릭터 4초에 한번씩 변경되는 스크립트
+let imgArrindex;
     setInterval(function(){
-        let imgArrinde
         if(imgArrindex < imgArr1.length) {
             leftMoveBg.style.backgroundImage = `url(${imgArr1[imgArrindex]})`;
             leftMoveBg.classList.remove('leftMoveBg_1','leftMoveBg_2','leftMoveBg_3')
@@ -35,34 +33,55 @@ function updateScreenSize() {
     },4000)
 
         window.addEventListener("wheel", function(event) {
+            event.preventDefault();
             let scrollXY = event.deltaY; //스크롤 방향 확인
             let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
+            console.log(scHeight);
+            console.log(scrollPosition);
             console.log(scrollXY);
-                setTimeout(() => {
+            console.log('-------------------------------')
                 if(scrollXY > 0 ) { //내려갈때
-                    if(scrollPosition <= scHeight) {
-                        window.scroll({
-                        top: scHeight*1, 
-                        behavior: 'smooth' 
-                        });
+                    if(scrollPosition <scHeight) {
+                        setTimeout(() => {
+                            window.scroll({
+                                top: scHeight*1, 
+                                behavior: 'smooth' 
+                            });
+                        },30);
+                    }else if(scrollPosition < scHeight*2) {
+                        setTimeout(() => {
+                            window.scroll({
+                                top: scHeight*2, 
+                                behavior: 'smooth' 
+                            });
+                        },30);
+                    }else if(scrollPosition < scHeight*3) {
+                        setTimeout(() => {
+                            window.scroll({
+                                top: scHeight*3, 
+                                behavior: 'smooth' 
+                            });
+                        },30);
                     }
-                    else if(scrollPosition <= scHeight*2) {
-                        window.scroll({
-                            top: scHeight*2, 
-                            behavior: 'smooth' 
-                        });
-                    }else if(scrollPosition <= scHeight*3) {
-                        window.scroll({
-                            top: scHeight*3, 
-                            behavior: 'smooth' 
-                        });
+                }else if( scrollXY < 0) { //올라갈때
+                    if(scrollPosition => scHeight) {
+                        setTimeout(() => {
+                            window.scroll({
+                                top: 0, 
+                                behavior: 'smooth' 
+                            });
+                        },30);
+                    }else if(scrollPosition => scHeight*3) {
+                        setTimeout(() => {
+                            window.scroll({
+                                top: scHeight*2,
+                                behavior: 'smooth' 
+                            });
+                        },30);
                     }
-                }else if( scrollXY < 50) { //올라갈때
-
+                    
                 }
-                });  
-            }, 500);
-    
+            }, { passive: false });
 
 
 
