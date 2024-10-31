@@ -40,6 +40,8 @@ function updateScreenSize() {
             console.log(scrollXY);
                 setTimeout(() => {
                 if(scrollXY > 0 ) { //내려갈때
+                    console.log(scHeight,'화면높이')
+                    console.log(scrollPosition,'현재높이')
                     if(scrollPosition <= scHeight) {
                         window.scroll({
                         top: scHeight*1, 
@@ -59,19 +61,44 @@ function updateScreenSize() {
                     }
                 }else if( scrollXY < 50) { //올라갈때
                     console.log('올라갑니다~~')
-                    console.log(scHeight,'화면높이')
-                    console.log(scrollPosition,'현재높이')
-                    if(scrollPosition >= scHeight) {
+                    
+                    if(scrollPosition >= (scHeight-100)) {
                         window.scroll({
                         top: 0, 
                         behavior: 'smooth' 
                         });
                     }
+                    else if(scrollPosition >= scHeight*2-200) {
+                        window.scroll({
+                            top: scHeight*2, 
+                            behavior: 'smooth' 
+                        });
+
+                    }
 
                 }
+                
                 });  
             }, 500);
+
+            function page1_motion() {
+                console.log('1페이지 도착!~~!')
+            }
     
+            function page2_motion() {
+                console.log('2페이지 도착!~~!')
+            }
+
+            function page3_motion() {
+                console.log('1페이지 도착!~~!')
+            }
+            function page4_motion() {
+                console.log('1페이지 도착!~~!')
+            }
+    
+
+
+
 
 
 
