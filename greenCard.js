@@ -6,14 +6,18 @@ let imgArr1 = [
 ]
 const leftMoveBg = document.querySelector('.leftMoveBg')
 const rightTitle =  document.querySelectorAll('.rightTitle')
-let scWidth = window.innerWidth;
-let scHeight = window.innerHeight;
+let scWidth = Math.round(window.innerWidth);
+ scWidth = Math.floor(scWidth / 10) * 10;
+let scHeight = Math.round(window.innerHeight);
+scHeight = Math.floor(scHeight / 10) * 10;
 window.addEventListener("resize",updateScreenSize)
 
 
 function updateScreenSize() {
     scWidth = window.innerWidth;
+    scWidth = Math.floor(scWidth / 10) * 10;
     scHeight = window.innerHeight;
+    scHeight = Math.floor(scHeight / 10) * 10;
 }
 // section1 - 캐릭터 4초에 한번씩 변경되는 스크립트
 let imgArrindex;
@@ -36,31 +40,33 @@ let imgArrindex;
             event.preventDefault();
             let scrollXY = event.deltaY; //스크롤 방향 확인
             let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
-            console.log(scrollPosition,'현재높이');
-            console.log(scHeight,'현재높이');
+            // console.log(scrollPosition,'현재높이');
+            // console.log(scHeight,'화면');
                 if(scrollXY > 0 ) { //내려갈때
                     if(scrollPosition < scHeight) {
+                        console.log('내려감11111111')
                         setTimeout(() => {
                             window.scroll({
-                                top: scHeight*1, 
+                                top: scHeight, 
                                 behavior: 'smooth' 
                             });
                         },30);
-                    }else if(scrollPosition < scHeight*2) {
+                    }else if(scrollPosition == scHeight) {
                         setTimeout(() => {
+                        console.log('내려감222222222222')
                             window.scroll({
                                 top: scHeight*2, 
                                 behavior: 'smooth' 
                             });
                         },30);
-                    }else if(scrollPosition <= scHeight*3) {
+                    }else if(scrollPosition == scHeight*2) {
                         setTimeout(() => {
                             window.scroll({
                                 top: scHeight*3, 
                                 behavior: 'smooth' 
                             });
                         },30);
-                    }else if(scrollPosition <= scHeight*4) {
+                    }else if(scrollPosition == scHeight*3) {
                         setTimeout(() => {
                             window.scroll({
                                 top: scHeight*4, 
@@ -72,59 +78,47 @@ let imgArrindex;
                     // console.log(scHeight,'화면높이');
                     // console.log(scrollPosition,'현재높이');
                     // console.log('-------------------------------')
-                        // if(scrollPosition == scHeight) {
-                        //     setTimeout(() => {
-                        //         window.scroll({
-                        //             top: 0, 
-                        //             behavior: 'smooth' 
-                        //         });
-                        //     },30);
-                        // }
-                        // else if(scrollPosition >= scHeight*2) {
-                        //     setTimeout(() => {
-                        //         window.scroll({
-                        //             top: scHeight, 
-                        //             behavior: 'smooth' 
-                        //         });
-                        //     },30);
-                        // }
-                        // else if(scrollPosition >= scHeight*3) {
-                        //     console.log('33333')
-                        //     setTimeout(() => {
-                        //         window.scroll({
-                        //             top: scHeight*2, 
-                        //             behavior: 'smooth' 
-                        //         });
-                        //     },30);
-                        // }
-                        // else if(scrollPosition >= scHeight*4) {
-                        //     setTimeout(() => {
-                        //         window.scroll({
-                        //             top: scHeight*3, 
-                        //             behavior: 'smooth' 
-                        //         });
-                        //     },30);
-                        // }
-                        // else if(scrollPosition >= scHeight*5) {
-                        //     setTimeout(() => {
-                        //         window.scroll({
-                        //             top: scHeight*5, 
-                        //             behavior: 'smooth' 
-                        //         });
-                        //     },30);
-                        // }
-                        if (scrollPosition === scHeight) {
-                            window.scroll({ top: 0, behavior: 'smooth' });
-                        } else if (scrollPosition >= scHeight && scrollPosition < scHeight * 2) {
-                            window.scroll({ top: scHeight, behavior: 'smooth' });
-                        } else if (scrollPosition >= scHeight * 2 && scrollPosition < scHeight * 3) {
-                            window.scroll({ top: scHeight * 2, behavior: 'smooth' });
-                        } else if (scrollPosition >= scHeight * 3 && scrollPosition < scHeight * 4) {
-                            window.scroll({ top: scHeight * 3, behavior: 'smooth' });
-                        } else if (scrollPosition >= scHeight * 4) {
-                            window.scroll({ top: scHeight * 4, behavior: 'smooth' });
+                        if(scrollPosition == scHeight) {
+                            setTimeout(() => {
+                                window.scroll({
+                                    top: 0, 
+                                    behavior: 'smooth' 
+                                });
+                            },30);
                         }
-                    
+                        else if(scrollPosition == scHeight*2) {
+                            setTimeout(() => {
+                                window.scroll({
+                                    top: scHeight, 
+                                    behavior: 'smooth' 
+                                });
+                            },30);
+                        }
+                        else if(scrollPosition == scHeight*3) {
+                            console.log('33333')
+                            setTimeout(() => {
+                                window.scroll({
+                                    top: scHeight*2, 
+                                    behavior: 'smooth' 
+                                });
+                            },30);
+                        }
+                        else if(scrollPosition >= scHeight*4) {
+                            setTimeout(() => {
+                                window.scroll({
+                                    top: scHeight*3, 
+                                    behavior: 'smooth' 
+                                });
+                            },30);
+                        }
+                        else if(scrollPosition >= scHeight*5) {
+                            setTimeout(() => {
+                                window.scroll({
+                                    top: scHeight*5, 
+                                    behavior: 'smooth' 
+                                });
+                            },30);
+                        }
                 }
             }, { passive: false });
 
