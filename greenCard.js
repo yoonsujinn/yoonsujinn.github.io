@@ -35,7 +35,7 @@ let imgArrindex;
             imgArrindex ++;
         }
     },4000)
-
+// 화면 전체 스크롤
         window.addEventListener("wheel", function(event) {
             event.preventDefault();
             let scrollXY = event.deltaY; //스크롤 방향 확인
@@ -44,7 +44,6 @@ let imgArrindex;
             // console.log(scHeight,'화면');
                 if(scrollXY > 0 ) { //내려갈때
                     if(scrollPosition < scHeight) {
-                        console.log('내려감11111111')
                         setTimeout(() => {
                             window.scroll({
                                 top: scHeight, 
@@ -53,7 +52,6 @@ let imgArrindex;
                         },30);
                     }else if(scrollPosition == scHeight) {
                         setTimeout(() => {
-                        console.log('내려감222222222222')
                             window.scroll({
                                 top: scHeight*2, 
                                 behavior: 'smooth' 
@@ -122,6 +120,10 @@ let imgArrindex;
                 }
             }, { passive: false });
 
+
+            window.addEventListener("scroll",function(event) {
+
+            });
             function page1_motion() {
                 console.log('1페이지 도착!~~!')
             }
