@@ -12,13 +12,26 @@ let scHeight = Math.round(window.innerHeight);
 scHeight = Math.floor(scHeight / 10) * 10;
 window.addEventListener("resize",updateScreenSize)
 
-
+// 화면 처음 시작할때 실행되는 js
 function updateScreenSize() {
     scWidth = window.innerWidth;
     scWidth = Math.floor(scWidth / 10) * 10;
     scHeight = window.innerHeight;
     scHeight = Math.floor(scHeight / 10) * 10;
 }
+document.querySelectorAll('.rightTitle').forEach((element,index) => {
+    setTimeout(() => {
+        element.classList.add('on');   
+    }, (index + 1) * 60);
+});
+setTimeout(() => {
+    document.querySelector('.section_1 em').classList.add('on');   
+},600);
+setTimeout(() => {
+    document.querySelector('.section_1 .rightApp').classList.add('on');   
+},1200);
+
+
 // section1 - 캐릭터 4초에 한번씩 변경되는 스크립트
 let imgArrindex;
     setInterval(function(){
@@ -120,13 +133,49 @@ let imgArrindex;
                 }
             }, { passive: false });
 
-
             window.addEventListener("scroll",function(event) {
+                let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
 
+                    if(scrollPosition < scHeight) {
+                        console.log('1페이지 도착!~~!')
+                        document.querySelectorAll('.rightTitle').forEach((element,index) => {
+                            setTimeout(() => {
+                                element.classList.add('on');   
+                            }, (index + 1) * 60);
+                        });
+                      
+                        
+                    }
+                    if(scrollPosition == scHeight) {
+                        console.log('2페이지 도착!~~!')
+                        document.querySelectorAll('.rightTitle').forEach(element => {
+                            element.classList.remove('on');   
+                        });
+                    }
+                    if(scrollPosition == scHeight*2) {
+                        console.log('3페이지 도착!~~!')
+                        document.querySelectorAll('.rightTitle').forEach(element => {
+                            element.classList.remove('on');   
+                        });
+                    }
+                    if(scrollPosition == scHeight*3) {
+                        console.log('4페이지 도착!~~!')
+                        document.querySelectorAll('.rightTitle').forEach(element => {
+                            element.classList.remove('on');   
+                        });
+                    }
+                    if(scrollPosition == scHeight*4) {
+                        console.log('5페이지 도착!~~!')
+                        document.querySelectorAll('.rightTitle').forEach(element => {
+                            element.classList.remove('on');   
+                        });
+                    }
+        
             });
-            function page1_motion() {
-                console.log('1페이지 도착!~~!')
-            }
+            
+
+            
+           
     
             function page2_motion() {
                 console.log('2페이지 도착!~~!')
