@@ -437,6 +437,8 @@ section.section_1 .leftImg {
     padding: 6px 26px;
     border-radius: 30px;
     outline: 2px solid;
+    cursor: pointer;
+
 }
 .section_1 em,
 .section_1 .rightApp {
@@ -449,9 +451,6 @@ section.section_1 .leftImg {
     transform: translate(0, 0);
     opacity: 0.8;
 }
-
-
-
 
 
 
