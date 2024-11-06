@@ -8,6 +8,29 @@ const leftMoveBg = document.querySelector('.leftMoveBg')
 const rightTitle =  document.querySelectorAll('.rightTitle')
 let scWidth = Math.round(window.innerWidth);
 let scHeight = Math.round(window.innerHeight);
+const motions = {
+    1: {
+        start: page1_motion,
+        end: page1_motion_exit,
+    },
+    2: {
+        start: page2_motion,
+        end: page2_motion_exit,
+    },
+    3: {
+        start: page3_motion,
+        end: page3_motion_exit,
+    },
+    4: {
+        start: page4_motion,
+        end: page4_motion_exit,
+    },
+    5: {
+        start: page5_motion,
+        end: page5_motion_exit,
+    },
+};
+
 
 // 화면 처음 시작할때 실행되는 js
 scWidth = Math.floor(scWidth / 10) * 10;
@@ -101,7 +124,6 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                 },30);
             }
             else if(scrollPosition == scHeight*3) {
-                console.log('33333')
                 setTimeout(() => {
                     window.scroll({
                         top: scHeight*2, 
@@ -128,66 +150,81 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
     }
 }, { passive: false });
 
+//페이지마다 기능 열렸다 닫혔다 하기
 window.addEventListener("scroll",function(event) {
     let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
-
-        if(scrollPosition < scHeight) {
-            page1_motion()
-            
-        }
-        if(scrollPosition == scHeight) {
-            console.log('2페이지 도착!~~!')
-            document.querySelectorAll('.rightTitle').forEach(element => {
-                element.classList.remove('on');   
-            });
-        }
-        if(scrollPosition == scHeight*2) {
-            console.log('3페이지 도착!~~!')
-            document.querySelectorAll('.rightTitle').forEach(element => {
-                element.classList.remove('on');   
-            });
-        }
-        if(scrollPosition == scHeight*3) {
-            console.log('4페이지 도착!~~!')
-            document.querySelectorAll('.rightTitle').forEach(element => {
-                element.classList.remove('on');   
-            });
-        }
-        if(scrollPosition == scHeight*4) {
-            console.log('5페이지 도착!~~!')
-            document.querySelectorAll('.rightTitle').forEach(element => {
-                element.classList.remove('on');   
-            });
-        }
-});
-            
-
+    let sectionIndex = document.querySelectorAll('section');
+        for(let i=1; i<sectionIndex.length; i++) {
+                if(scrollPosition < scHeight) {
+                    motions[i].end();
+                    motions[1].start();
+                }
+                if(scrollPosition == scHeight) {
+                    motions[i].end();
+                    motions[2].start();
+                }
+                if(scrollPosition == scHeight*2) {
+                    motions[i].end();
+                    motions[3].start();
+                }
+                if(scrollPosition == scHeight*3) {
+                    motions[i].end();
+                    motions[4].start();
+                }
+                if(scrollPosition == scHeight*4) {
+                    motions[i].end();
+                    motions[5].start();
+                }
+            }
+        });
 // 페이지마다 로딩될때 실행하는 JS
-            function page1_motion() {
-                console.log('1페이지 도착!~~!')
-                document.querySelectorAll('.rightTitle').forEach((element,index) => {
-                    setTimeout(() => {
-                        element.classList.add('on');   
-                    }, (index + 1) * 60);
-                });
-                setTimeout(() => {
-                    document.querySelector('.section_1 em').classList.add('on');   
-                },600);
-                setTimeout(() => {
-                    document.querySelector('.section_1 .rightApp').classList.add('on');   
-                },1200);
-            }
-    
-            function page2_motion() {
-                console.log('2페이지 도착!~~!')
-            }
+    function page1_motion() {
+        console.log('1페이지 도착!~~!')
+        document.querySelectorAll('.rightTitle').forEach((element,index) => {
+            setTimeout(() => {
+                element.classList.add('on');   
+            }, (index + 1) * 60);
+        });
+        setTimeout(() => {
+            document.querySelector('.section_1 em').classList.add('on');   
+        },600);
+        setTimeout(() => {
+            document.querySelector('.section_1 .rightApp').classList.add('on');   
+        },1200);
+    }
+    function page1_motion_exit() {
+        document.querySelectorAll('.rightTitle').forEach((element,index) => {
+                element.classList.remove('on');   
+        });
+        document.querySelector('.section_1 em').classList.remove('on');   
+        document.querySelector('.section_1 .rightApp').classList.remove('on');   
+    }
 
-            function page3_motion() {
-                console.log('1페이지 도착!~~!')
-            }
-            function page4_motion() {
-                console.log('1페이지 도착!~~!')
-            }
+    function page2_motion() {
+        console.log('2페이지 도착!~~!')
+    }
+    function page2_motion_exit() {
+        console.log('2페이지 나가기')
+    }
+    
+    function page3_motion() {
+        console.log('3페이지 도착!~~!')
+    }
+    function page3_motion_exit() {
+        console.log('3페이지 나가기')
+    }
+    function page4_motion() {
+        console.log('4페이지 도착!~~!')
+    }
+    function page4_motion_exit() {
+        console.log('4페이지 나가기')
+    }
+    function page5_motion() {
+        console.log('5페이지 도착!~~!')
+    }
+    function page5_motion_exit() {
+        console.log('5페이지 나가기')
+    }
 
 
 

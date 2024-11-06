@@ -843,43 +843,60 @@
     
     .on2 .section3_ImgWrap .on2_obj_3 {
         position: absolute;
-        top: 117px;
-        right: 159px;
-        width: 585px;
-        height: 236px;
+        top: 151px;
+        right: 189px;
+        width: 35px;
+        height: 30px;
+        transform: rotate(38deg);
+        animation: leaf-fly 4s linear infinite;
         background: url(./images/on2_obj_3.png) center / contain no-repeat;
     }
     .on2 .section3_ImgWrap .on2_obj_4 {
         position: absolute;
-        top: 117px;
-        right: 159px;
-        width: 585px;
-        height: 236px;
-        background: url(./images/on2_obj_4.png) center / contain no-repeat;
+        top: 116px;
+        right: 244px;
+        width: 47px;
+        height: 46px;
+        rotate: -16deg;
+        animation: leaf-fly 4s linear infinite;
+
+        background: url(./images/on2_obj_3.png) center / contain no-repeat;
     }
     .on2 .section3_ImgWrap .on2_obj_5 {
         position: absolute;
-        top: 117px;
-        right: 159px;
-        width: 585px;
-        height: 236px;
-        background: url(./images/on2_obj_5.png) center / contain no-repeat;
+        top: 193px;
+        right: 264px;
+        width: 71px;
+        height: 46px;
+        background: url(./images/on2_obj_3.png) center / contain no-repeat;
     }
 
-
-    /* 
-    .section_3.on3 {
-        background: #F2FAF6;
+    @keyframes leaf-fly_1 {
+        0% {
+            transform: rotate(38deg) translateX(0) translateY(0);
+            opacity: 1;
+        }
+        20% {
+            transform: rotate(33deg) translateX(5px) translateY(-5px);
+        }
+        40% {
+            transform: rotate(25deg) translateX(15px) translateY(-15px);
+        }
+        50% {
+            transform: rotate(20deg) translateX(20px) translateY(-25px);
+        }
+        60% {
+            transform: rotate(15deg) translateX(30px) translateY(-35px);
+        }
+        80% {
+            transform: rotate(10deg) translateX(45px) translateY(-45px);
+        }
+        100% {
+            transform: rotate(12deg) translateX(62px) translateY(-39px);
+            opacity: 0;
+        }
     }
-    .section_3.on3 .section3_headText,
-    .section_3.on3 .section3_mainText{
-        color: #047966;
-    }
 
-
-     */
-    
- 
     
     /* ----------------------팝업------------------------- */
     .popupContainer {
