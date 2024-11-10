@@ -1,9 +1,5 @@
 
-let imgArr1 = [
-    './images/bg-main-visual-bg-01.png',
-    './images/bg-main-visual-bg-02.png',
-    './images/bg-main-visual-bg-03.png',
-]
+
 const leftMoveBg = document.querySelector('.leftMoveBg')
 const rightTitle =  document.querySelectorAll('.rightTitle')
 let scWidth = Math.round(window.innerWidth);
@@ -49,8 +45,17 @@ page1_motion()
 
 
 
-// section1 - 캐릭터 4초에 한번씩 변경되는 스크립트
+// section1 - 캐릭터 4초에 한번씩 변경되는 스크립트 
 let imgArrindex;
+let imgArrindex_2 = 0;
+let sectionArray = [1,2,3];
+let imgArr1 = [
+    './images/bg-main-visual-bg-01.png',
+    './images/bg-main-visual-bg-02.png',
+    './images/bg-main-visual-bg-03.png',
+]
+let section_3 = document.querySelector('.section_3');
+
     setInterval(function(){
         if(imgArrindex < imgArr1.length) {
             leftMoveBg.style.backgroundImage = `url(${imgArr1[imgArrindex]})`;
@@ -64,8 +69,54 @@ let imgArrindex;
             leftMoveBg.classList.add(`leftMoveBg_${imgArrindex + 1}`)
             imgArrindex ++;
         }
+
+        sectionArray.forEach(ele => {
+            section_3.classList.remove(`on${imgArrindex_2}`)
+        });
+        if (imgArrindex_2 < sectionArray.length) {
+            section_3.classList.add(`on${imgArrindex_2+1}`);
+            switch (imgArrindex_2) {
+                case 0 : section3_case0();
+                break;
+                case 1 : section3_case1();
+                break;
+                case 2 : section3_case2();
+                break;
+            }
+            imgArrindex_2 ++;
+        } else {
+            imgArrindex_2 = 0;
+            section_3.classList.add(`on${imgArrindex_2+1}`);
+            switch (imgArrindex_2) {
+                case 0 : section3_case0();
+                break;
+                case 1 : section3_case1();
+                break;
+                case 2 : section3_case2();
+                break;
+            }
+            imgArrindex_2 ++;
+        }           
     },4000)
-    
+
+    let section3_headText = document.querySelector.querySelector('.section3_headText')
+    let section3_mainText = document.querySelector.querySelector('.section3_mainText')
+    let section3_mainText = document.querySelector.querySelectorAll('.section3_mainText')
+    function section3_case0() {
+        section3_headText.
+    }
+    function section3_case1() {
+        console.log('section3_case1 실행@@@')
+    }
+
+    function section3_case2() {
+        console.log('section3_case2 실행@@@')
+    }
+
+
+
+
+
 // 화면 전체 스크롤
 window.addEventListener("wheel", function(event) {
 event.preventDefault();
