@@ -45,9 +45,10 @@ page1_motion()
 
 
 
+
 // section1 - 캐릭터 4초에 한번씩 변경되는 스크립트 
 let imgArrindex;
-let imgArrindex_2 = 0;
+let imgArrindex_2 = 1;
 let sectionArray = [1,2,3];
 let imgArr1 = [
     './images/bg-main-visual-bg-01.png',
@@ -70,40 +71,29 @@ let section_3 = document.querySelector('.section_3');
             imgArrindex ++;
         }
 
-        sectionArray.forEach(ele => {
-            section_3.classList.remove(`on${imgArrindex_2}`)
-        });
-        // if (imgArrindex_2 < sectionArray.length) {
-        //     section_3.classList.add(`on${imgArrindex_2+1}`);
-        //     switch (imgArrindex_2) {
-        //         case 0 : section3_case0();
-        //         break;
-        //         case 1 : section3_case1();
-        //         break;
-        //         case 2 : section3_case2();
-        //         break;
-        //     }
-        //     imgArrindex_2 ++;
-        // } else {
-        //     imgArrindex_2 = 0;
-        //     section_3.classList.add(`on${imgArrindex_2+1}`);
-        //     switch (imgArrindex_2) {
-        //         case 0 : section3_case0();
-        //         break;
-        //         case 1 : section3_case1();
-        //         break;
-        //         case 2 : section3_case2();
-        //         break;
-        //     }
-        //     imgArrindex_2 ++;
-        }           
-    },4000)
+        },4000)
+
+        
+        section_3.classList.add(`on${imgArrindex_2}`)
+        setInterval(function() {
+                if (imgArrindex_2 < sectionArray.length) {
+                sectionArray.forEach(ele => {
+                    section_3.classList.remove(`on${ele}`)
+                });
+                imgArrindex_2++;
+                setTimeout(() => {
+                    section_3.classList.add(`on${imgArrindex_2}`)
+                },2);
+                
+            } 
+        },4000)
+
+
 
     let section3_headText = document.querySelector('.section3_headText')
     let section3_mainText = document.querySelector('.section3_mainText')
     let section3_ImgObjs = document.querySelectorAll('.section3_ImgObjs')
     function section3_case0() {
-        
         section3_headText.innerHTML = "환경을 위한 레벨업";
         section3_mainText.innerHTML = "환경도 지키고 교통요금도 포인트로 적립받는<br/>일석이조 에코라이프";
         
@@ -121,6 +111,8 @@ let section_3 = document.querySelector('.section_3');
         section3_headText.innerHTML = "환경도 지키고, 혜택도 받고!";
         section3_mainText.innerHTML = "친환경 활동 및 소비만큼 혜택을 제공하는<br/>리워드 서비스 입니다.";
     }
+
+
 
 
 
