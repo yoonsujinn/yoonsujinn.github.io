@@ -74,7 +74,37 @@ let section_3 = document.querySelector('.section_3');
         },4000)
 
         
+    let section3_headText = document.querySelector('.section3_headText')
+    let section3_mainText = document.querySelector('.section3_mainText')
+    let section3_ImgObjs = document.querySelectorAll('.section3_ImgObjs')
+    function section3_case1() {
+        section3_headText.innerHTML = "환경을 위한 레벨업";
+        section3_mainText.innerHTML = "환경도 지키고 교통요금도 포인트로 적립받는<br/>일석이조 에코라이프";
+        
+    }
+    function section3_case2() {
+        console.log('section3_case1 실행@@@')
+        section3_headText.innerHTML = "지구를 위한 착한 생각!";
+        section3_mainText.innerHTML = "그린카드와 함께라면 평범한 쇼핑도<br/>녹색 소비가 됩니다!";
+
+    }
+
+    function section3_case3() {
+        console.log('section3_case2 실행@@@')
+        
+        section3_headText.innerHTML = "환경도 지키고, 혜택도 받고!";
+        section3_mainText.innerHTML = "친환경 활동 및 소비만큼 혜택을 제공하는<br/>리워드 서비스 입니다.";
+    }
+
+
+
+
+
+
+
+        
         section_3.classList.add(`on${imgArrindex_2}`)
+        section3_case1();
         setInterval(function() {
                 if (imgArrindex_2 < sectionArray.length) {
                 sectionArray.forEach(ele => {
@@ -83,35 +113,28 @@ let section_3 = document.querySelector('.section_3');
                 imgArrindex_2++;
                 setTimeout(() => {
                     section_3.classList.add(`on${imgArrindex_2}`)
+                    imgArrindex_2 === 1 ? section3_case1() : null;
+                    imgArrindex_2 === 2 ? section3_case2() : null;
+                    imgArrindex_2 === 3 ? section3_case3() : null;
+
                 },2);
                 
-            } 
+            }else if(imgArrindex_2 >= sectionArray.length) {
+                imgArrindex_2 = 0;
+                sectionArray.forEach(ele => {
+                    section_3.classList.remove(`on${ele}`)
+                });
+                imgArrindex_2++;
+                setTimeout(() => {
+                    section_3.classList.add(`on${imgArrindex_2}`);
+                    imgArrindex_2 === 1 ? section3_case1() : null;
+                    imgArrindex_2 === 2 ? section3_case2() : null;
+                    imgArrindex_2 === 3 ? section3_case3() : null;
+                    console.log(imgArrindex_2);
+                },2);
+
+            }
         },4000)
-
-
-
-    let section3_headText = document.querySelector('.section3_headText')
-    let section3_mainText = document.querySelector('.section3_mainText')
-    let section3_ImgObjs = document.querySelectorAll('.section3_ImgObjs')
-    function section3_case0() {
-        section3_headText.innerHTML = "환경을 위한 레벨업";
-        section3_mainText.innerHTML = "환경도 지키고 교통요금도 포인트로 적립받는<br/>일석이조 에코라이프";
-        
-    }
-    function section3_case1() {
-        console.log('section3_case1 실행@@@')
-        section3_headText.innerHTML = "지구를 위한 착한 생각!";
-        section3_mainText.innerHTML = "그린카드와 함께라면 평범한 쇼핑도<br/>녹색 소비가 됩니다!";
-
-    }
-
-    function section3_case2() {
-        console.log('section3_case2 실행@@@')
-        
-        section3_headText.innerHTML = "환경도 지키고, 혜택도 받고!";
-        section3_mainText.innerHTML = "친환경 활동 및 소비만큼 혜택을 제공하는<br/>리워드 서비스 입니다.";
-    }
-
 
 
 
