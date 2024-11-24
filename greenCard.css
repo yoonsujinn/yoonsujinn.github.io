@@ -670,24 +670,31 @@
     
     
     /* -----------------------2페이지--------------------------- */
+    .section_5 .sectionWrap,
+    .section_2 .sectionWrap {
+        gap: 151px;
+    }
     
-    
+    .section5_left, .section2_right,
     .section2_left, .section2_right {
         display: flex;
     
     }
+    .section5_left,
     .section2_left {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 33%;
-        margin: 0 160px 0 60px;
+        width: 29%;
+        margin: 0 0  0 70px;
     }
-    .section2_left > p {
+    .section5_left > p, 
+    .section2_left > p { 
         font-size: 34px;
         font-weight: bold;
     }
     
+    .section5_left > b,
     .section2_left > b {
         font-size: 56px;
         line-height: 68px;
@@ -695,10 +702,12 @@
         font-family: "Noto Sans KR", sans-serif; 
     }
     
+    .section5_left > strong,
     .section2_left > strong {
         font-size: 23px;
         margin: 32px 0 20px 0;
     }
+
     .section2_left > a {
         position: relative;
         width: 74px;
@@ -709,6 +718,7 @@
         cursor: none;
         pointer-events: none;
     }
+    .section5_left > a:after,
     .section2_left > a:after {
         content: '';
         display: block;
@@ -718,9 +728,11 @@
         background: #228979;
     }
     
+    .section5_right,
     .section2_right {
         align-items: center;
         gap: 50px;
+        width: 42%;
     }
     .section2_right .cardIntroWrap{
         position: relative;
@@ -1211,58 +1223,73 @@
     
     .section4_head {
         display: flex;
-        position: absolute;
-        /* height: 140px; */
+        position: relative;
+        top: 138px;
+        left: 6px;
+        font-size: 18px;
+        gap: 20px;
+    }
+    .section4_head li {
+        cursor: pointer;
+    }
+    .section4_head li.on {
+        font-weight: bold;
     }
     
     .section4_body {
         display: none;
         width: 100%;
-        border:1px solid;
-        margin: 60px 0 0 0;
+        /* border:1px solid; */
+        margin: 179px 0 0 0;
+        gap: 20px;
     }
     .section4_body.on {
         display: flex;
     }
     .pointSave{
-        width: 200px;
+        display: flex;
+        width: 213px;
         height: 300px;
         border-radius: 30px;
         text-align: center;
-        border: 1px solid #555;
+        border: 2px solid #e6dfdf;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
     .pointSave .pointSaveImg {
         width:100%;
-        height:100px        
+        height: 130px;
     }
 
     .pointSave:nth-child(1) .pointSaveImg {
-        background: url(./images/icon/icon-main-section03-1-1.png) center / contain no-repeat;
+        background: url(./images/icon/icon-main-section03-1-1.png) center / 60% no-repeat;
     }
     .pointSave:nth-child(2) .pointSaveImg {
-        background: url(./images/icon/icon-main-section03-1-2.png) center / contain no-repeat;
+        background: url(./images/icon/icon-main-section03-1-2.png) center / 60% no-repeat;
     }
     .pointSave:nth-child(3) .pointSaveImg {
-        background: url(./images/icon/icon-main-section03-1-3.png) center / contain no-repeat;
+        background: url(./images/icon/icon-main-section03-1-3.png) center / 60% no-repeat;
     }
     .pointSave:nth-child(4) .pointSaveImg {
-        background: url(./images/icon/icon-main-section03-1-4.png) center / contain no-repeat;
+        background: url(./images/icon/icon-main-section03-1-4.png) center / 60% no-repeat;
     }
     .pointSave:nth-child(5) .pointSaveImg {
-        background: url(./images/icon/icon-main-section03-1-5.png) center / contain no-repeat;
+        background: url(./images/icon/icon-main-section03-1-5.png) center / 60% no-repeat;
     }
 
     .section4_body .pointTitle {
         font-weight: bold;
         font-size: 22px;
+        margin: 8px 0 0 0;
     }
 
     .section4_body .pointmainText {
-        outline: 2px solid;
-        width:130px;
-        margin: 0 auto;
+        /* outline: 2px solid; */
+        /* width: 108px; */
+        margin: 7px 0 0 0;
     }
 
 
-    
 
+    /* section5---------------- */
