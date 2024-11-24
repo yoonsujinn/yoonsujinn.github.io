@@ -116,7 +116,6 @@ let section_3 = document.querySelector('.section_3');
                     imgArrindex_2 === 1 ? section3_case1() : null;
                     imgArrindex_2 === 2 ? section3_case2() : null;
                     imgArrindex_2 === 3 ? section3_case3() : null;
-
                 },2);
                 
             }else if(imgArrindex_2 >= sectionArray.length) {
@@ -178,6 +177,14 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                 });
             },30);
         }
+        else if(scrollPosition == scHeight*4) {
+            setTimeout(() => {
+                window.scroll({
+                    top: scHeight*5, 
+                    behavior: 'smooth' 
+                });
+            },30);
+        }
     }else if( scrollXY < 50) { //올라갈때
         // console.log(scHeight,'화면높이');
         // console.log(scrollPosition,'현재높이');
@@ -217,7 +224,15 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
             else if(scrollPosition >= scHeight*5) {
                 setTimeout(() => {
                     window.scroll({
-                        top: scHeight*5, 
+                        top: scHeight*4, 
+                        behavior: 'smooth' 
+                    });
+                },30);
+            }
+            else if(scrollPosition >= scHeight*6) {
+                setTimeout(() => {
+                    window.scroll({
+                        top: scHeight*6, 
                         behavior: 'smooth' 
                     });
                 },30);
@@ -254,7 +269,6 @@ window.addEventListener("scroll",function(event) {
         });
 // 페이지마다 로딩될때 실행하는 JS
     function page1_motion() {
-        console.log('1페이지 도착!~~!')
         document.querySelectorAll('.rightTitle').forEach((element,index) => {
             setTimeout(() => {
                 element.classList.add('on');   
