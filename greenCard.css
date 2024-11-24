@@ -1285,11 +1285,21 @@
     }
 
     .section4_body .pointmainText {
-        /* outline: 2px solid; */
-        /* width: 108px; */
+
         margin: 7px 0 0 0;
     }
 
 
 
     /* section5---------------- */
+    /* section6---------------- */
+    
+.section6Container {
+    display: flex;
+    
+}
+
+.bigLogo {
+    width: 300px;
+    height: 300px;
+}

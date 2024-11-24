@@ -25,6 +25,10 @@ const motions = {
         start: page5_motion,
         end: page5_motion_exit,
     },
+    6: {
+        start: page6_motion,
+        end: page6_motion_exit,
+    }
 };
 
 
@@ -83,14 +87,12 @@ let section_3 = document.querySelector('.section_3');
         
     }
     function section3_case2() {
-        console.log('section3_case1 실행@@@')
         section3_headText.innerHTML = "지구를 위한 착한 생각!";
         section3_mainText.innerHTML = "그린카드와 함께라면 평범한 쇼핑도<br/>녹색 소비가 됩니다!";
 
     }
 
     function section3_case3() {
-        console.log('section3_case2 실행@@@')
         
         section3_headText.innerHTML = "환경도 지키고, 혜택도 받고!";
         section3_mainText.innerHTML = "친환경 활동 및 소비만큼 혜택을 제공하는<br/>리워드 서비스 입니다.";
@@ -129,12 +131,10 @@ let section_3 = document.querySelector('.section_3');
                     imgArrindex_2 === 1 ? section3_case1() : null;
                     imgArrindex_2 === 2 ? section3_case2() : null;
                     imgArrindex_2 === 3 ? section3_case3() : null;
-                    console.log(imgArrindex_2);
                 },2);
 
             }
         },4000)
-
 
 
 
@@ -186,9 +186,9 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
             },30);
         }
     }else if( scrollXY < 50) { //올라갈때
-        // console.log(scHeight,'화면높이');
-        // console.log(scrollPosition,'현재높이');
-        // console.log('-------------------------------')
+        console.log(scHeight,'화면높이');
+        console.log(scrollPosition,'현재높이');
+        console.log('-------------------------------')
             if(scrollPosition == scHeight) {
                 setTimeout(() => {
                     window.scroll({
@@ -213,7 +213,7 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                     });
                 },30);
             }
-            else if(scrollPosition >= scHeight*4) {
+            else if(scrollPosition == scHeight*4) {
                 setTimeout(() => {
                     window.scroll({
                         top: scHeight*3, 
@@ -221,22 +221,22 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                     });
                 },30);
             }
-            else if(scrollPosition >= scHeight*5) {
+            else if(scrollPosition == scHeight*5) {
                 setTimeout(() => {
                     window.scroll({
                         top: scHeight*4, 
                         behavior: 'smooth' 
                     });
                 },30);
-            }
-            else if(scrollPosition >= scHeight*6) {
+            }else if(scrollPosition == scHeight*6) {
                 setTimeout(() => {
                     window.scroll({
-                        top: scHeight*6, 
+                        top: scHeight*5, 
                         behavior: 'smooth' 
                     });
                 },30);
             }
+            
     }
 }, { passive: false });
 
@@ -290,29 +290,35 @@ window.addEventListener("scroll",function(event) {
     }
 
     function page2_motion() {
-        console.log('2페이지 도착!~~!')
+        // console.log('2페이지 도착!~~!')
     }
     function page2_motion_exit() {
-        console.log('2페이지 나가기')
+        // console.log('2페이지 나가기')
     }
     
     function page3_motion() {
-        console.log('3페이지 도착!~~!')
+        // console.log('3페이지 도착!~~!')
     }
     function page3_motion_exit() {
-        console.log('3페이지 나가기')
+        // console.log('3페이지 나가기')
     }
     function page4_motion() {
-        console.log('4페이지 도착!~~!')
+        // console.log('4페이지 도착!~~!')
     }
     function page4_motion_exit() {
-        console.log('4페이지 나가기')
+        // console.log('4페이지 나가기')
     }
     function page5_motion() {
         console.log('5페이지 도착!~~!')
     }
     function page5_motion_exit() {
         console.log('5페이지 나가기')
+    }
+    function page6_motion() {
+    console.log('6페이지 도착!~~!')
+    }
+    function page6_motion_exit() {
+        console.log('6페이지 나가기')
     }
 
 
