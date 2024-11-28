@@ -340,12 +340,12 @@
     }
     
     .sectionWrap {
-        width: 1400px;
+        width: 1114px;
         margin: 0 auto;
     }
 
     section h1 {
-        font-size: 60px;
+        font-size: 50px;
     }
     .contTopMenu{
         display: flex;
@@ -353,39 +353,44 @@
     }
 
     .contTopMenu li{
-        margin: 10px 10px 0 0;
+        margin: 0px 30px 0 0;
     }
     .contTopMenu li.on{
         border-bottom: 3px solid  #333;
         font-weight: bold;
     }
+    .contTopMenu li.on a{
+        color: #333;
+    }
 
     .contTopMenu li a{
-        color: #111;
+        color: #8d8d8d;
         font-size: 25px;
 
     }
 
     .custCon_Top {
         display: flex;
+        justify-content: space-between;
     }
 
     .custCon_Top .left {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 230px;
-        padding: 0 150px 0 70px;
+        gap: 10px;
+        height: 220px;
+        padding: 0px 160px 0 50px;
         border-radius: 23px;
         background: #F9FAFC;
     }
 
     .custCon_Top .left p:first-child {
-        font-size: 25px;
+        font-size: 23px;
         padding: 0 0 0px 0;
     }
     .custCon_Top .left p:last-child {
-        font-size: 55px;
+        font-size: 41px;
         font-weight: bold;
     }
 
@@ -394,16 +399,17 @@
         justify-content: center;
         flex-direction: row;
         align-items: center;
-        gap: 50px;
-        height: 230px;
-        padding: 0 150px 0 70px;
+        gap: 80px;
+        height: 220px;
+        padding: 0 70px 0 70px;
         border-radius: 23px;
-        border: 2px solid #546a96;
+        border: 2px solid #bfbfbf;
+        box-sizing: border-box;
     }
     .custCon_Top .right .rightTitle {
         text-align: center;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .custCon_Top .right .rightCon {
@@ -413,5 +419,11 @@
     .custCon_Top .right .rightCon ul li {
         list-style-type:initial;
         list-style-position: outside;
+        margin: 10px 0;
     } 
+
+    .custCon_Top .right .rightCon ul li::marker {
+        transform: translate(20px, 20px); /* 불릿을 왼쪽으로 10px 이동 */
+        left: 10px;
+    }
     
