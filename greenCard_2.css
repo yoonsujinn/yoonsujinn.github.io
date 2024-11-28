@@ -19,6 +19,9 @@
         
     
     }
+    a {
+        color: #000;
+    }
     
     body,
     html {
@@ -336,7 +339,7 @@
     
     /* 헤더끝 */
     section {
-        padding: 190px 0 200px;
+        padding: 130px 0 200px;
     }
     
     .sectionWrap {
@@ -422,8 +425,53 @@
         margin: 10px 0;
     } 
 
-    .custCon_Top .right .rightCon ul li::marker {
-        transform: translate(20px, 20px); /* 불릿을 왼쪽으로 10px 이동 */
-        left: 10px;
+    .custCon_Cetner{
+        background: #F9FAFC;
+        padding: 50px 0;
+        margin: 50px 0 0 0;
     }
+
+    .center_title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .centerUl {
+        margin: 20px 0;
+    }
+    .custCon_Cetner .sectionWrap>p,
+    .centerUl p {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    .centerUl li {
+        list-style-type:initial;
+        list-style-position: outside;
+        margin: 10px 0 10px 50px;
+        font-size: 20px;
+    } 
+    .custCon_Cetner .gridBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    .gridBox div {
+        text-align: center;
+        padding: 10px 20px;
+        border: 2px solid #c9c9c9;
+        border-radius: 10px;
+        background: #fff;
+    }
+    .gridBox div :nth-child(1) {
+        font-size: 20px;
+    }
+    .gridBox div :nth-child(2) {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+
+    
     
