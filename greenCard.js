@@ -42,6 +42,7 @@ function updateScreenSize() {
     scWidth = Math.floor(scWidth / 10) * 10;
     scHeight = window.innerHeight;
     scHeight = Math.floor(scHeight / 10) * 10;
+    console.log('사이즈변경',scWidth,scHeight)
 }
 
 page1_motion()
@@ -142,12 +143,13 @@ let section_3 = document.querySelector('.section_3');
 
 // 화면 전체 스크롤
 window.addEventListener("wheel", function(event) {
-event.preventDefault();
+
 let scrollXY = event.deltaY; //스크롤 방향 확인
 let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
 // console.log(scrollPosition,'현재높이');
 // console.log(scHeight,'화면');
     if(scrollXY > 0 ) { //내려갈때
+        event.preventDefault();
         if(scrollPosition < scHeight) {
             setTimeout(() => {
                 window.scroll({
@@ -290,26 +292,26 @@ window.addEventListener("scroll",function(event) {
     }
 
     function page2_motion() {
-        // console.log('2페이지 도착!~~!')
+        console.log('2페이지 도착!~~!')
     }
     function page2_motion_exit() {
-        // console.log('2페이지 나가기')
+        console.log('2페이지 나가기')
     }
     
     function page3_motion() {
-        // console.log('3페이지 도착!~~!')
+        console.log('3페이지 도착!~~!')
     }
     function page3_motion_exit() {
-        // console.log('3페이지 나가기')
+        console.log('3페이지 나가기')
     }
     function page4_motion() {
-        // console.log('4페이지 도착!~~!')
+        console.log('4페이지 도착!~~!')
     }
     function page4_motion_exit() {
-        // console.log('4페이지 나가기')
+        console.log('4페이지 나가기')
     }
     function page5_motion() {
-        console.log('5페이지 도착!~~!')
+        // console.log('5페이지 도착!~~!')
     }
     function page5_motion_exit() {
         console.log('5페이지 나가기')

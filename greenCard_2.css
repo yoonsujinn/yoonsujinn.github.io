@@ -1,0 +1,477 @@
+
+/* 폰트 */
+
+    /* font-family: "Noto Sans KR", sans-serif; */
+
+  
+
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "Gowun Dodum", sans-serif;
+    }
+    
+    *::selection {
+        color: #F4F9AC;
+        background-color: #25C18D;
+        
+    
+    }
+    a {
+        color: #000;
+    }
+    
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+    }
+    
+    body::-webkit-scrollbar {
+        display: none;
+      }
+    
+    /* ----------------------팝업------------------------- */
+    .popupContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        background: rgb(0 0 000 / 60%);
+        display: none;
+    }
+    .popupContainer ul li.appDownPop {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 400px;
+        border-radius: 0 130px 0 0;
+        background: #fff;
+    }
+    .popupContainer .appDownWrap {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .popupContainer .appDownHeader {
+        width: 100%;
+        height: 127px;
+        padding: 55px 0 0 0;
+        box-sizing: border-box;
+    }
+    .popupContainer .appDownHeader h1{
+        text-align: center;
+        font-size: 30px;
+    }
+    .popupContainer .appDownHeader button{
+        position: absolute;
+        right: 23px;
+        top: -3px;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        font-size: 55px;
+        background: none;
+    }
+    .popupContainer .appDownBody {
+        width: 100%;
+        height: 260px;
+    }
+    .popupContainer .appDownBody > .right,
+    .popupContainer .appDownBody > .left {
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+    
+    .popupContainer .appDownBody > .right strong,
+    .popupContainer .appDownBody > .left strong {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin: 23px 0 17px;
+        font-size: 19px;
+    }
+    
+    .popupContainer .appDownBody > .left .appDownButton {
+        display: flex;
+        gap: 11px;
+        width: 330px;
+        border: 2px solid #d1cfcf;
+        border-radius: 50px;
+        padding: 12px 0;
+        margin: 12px auto 0;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .appDownBody > .left .appDownButton .appLogoImg {
+        width: 35px;
+        height: 35px;
+    } 
+    
+    .appDownBody > .left .appDownButton:nth-child(2) .appLogoImg {
+        background: url(./images/icon/icon-google.png) center /contain no-repeat;
+    } 
+    .appDownBody > .left .appDownButton:nth-child(3) .appLogoImg {
+        background: url(./images/icon/icon-apple.png) center /contain no-repeat;
+    } 
+    
+    .appDownBody > .right .AppdownQR {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        background: url(./images/img-appqrcode-prod.png) center /86% no-repeat;
+    }
+
+    /* -------------------------------------------------- */
+    .skip {
+        position: absolute;
+        width: 100%;
+        /* height: 100%; */
+        height: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.25);
+    }
+    .skip:focus-visible,
+    .skip:focus-within {
+        height: 100%;
+    
+    }
+    .skip a {
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        color: #fff;
+        font-size: 36px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .skip a:focus:after {
+        content: '';
+        position: absolute;
+        top: 68px;
+        width: 210px;
+        height: 2px;
+        background: #fff;
+    }
+    
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        height: 90px;
+        width: 100%;
+        background: #25C18D;
+        z-index: 5;
+    }
+    
+    /* 상단nav */
+    
+    .logoLink {
+        display: block;
+        width: 120px;
+        height: 40px;
+    
+    }
+    nav .headerLogo {
+        position: relative;
+        z-index: 5;
+        width: 120px;
+        height: 40px;
+        background: url("./images/logo.svg") center / contain no-repeat;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90px;
+        margin: 0 auto;
+        gap: 1px;
+        z-index: 5;
+        /* border-bottom: 2px solid #444; */
+    }
+    
+    .mainMenu {
+        display: flex;
+        width: 750px;
+        height: 90px;
+        margin: 0 60px;
+        justify-content: flex-end;
+    }
+    ul.mainMenu > li.child {
+        float: left;
+        position: relative;
+        width: calc(99% / 5);
+        line-height: 90px;
+        text-align: center;
+        font-size: 17px;
+        z-index: 5;
+    }
+    ul.mainMenu > li.child a {
+        position: relative;
+        color: #222;
+    }
+    ul.mainMenu li.child > a:focus-visible,
+    ul.mainMenu li.child > a:hover {
+        font-weight: bold;
+    }
+    ul.mainMenu > li.child a:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: -95%;
+        width: 1px;
+        height: 50px;
+        opacity: 0;
+        transition: 0.3s;
+        transform: scaleX(-1) rotate(105deg);
+        background: url("./images/bg-leaf.svg") center / 100% no-repeat;
+    }
+    ul.mainMenu li.child:focus-within a::after,
+    ul.mainMenu li.child:hover a:after {
+        opacity: 1;
+        width: 9px;
+    }
+    
+    ul.mainMenu > li.child ul.innerUl a:after {
+        content: none;
+    }
+    ul.innerUl {
+        opacity: 0;
+        cursor: none;
+        pointer-events: none;
+    }
+    ul.mainMenu:focus-within .innerUl,
+    ul.mainMenu:hover .innerUl {
+        opacity: 1;
+        cursor: auto;
+        pointer-events: auto;
+    }
+    
+    ul.mainMenu li ul.innerUl li a {
+        display: block;
+        width: 90%;
+        height: 45px;
+        font-size: 16px;
+        line-height: 45px;
+        color: #111;
+        margin: 0 auto;
+    }
+    
+    ul.mainMenu li ul.innerUl li a:focus,
+    ul.mainMenu li ul.innerUl li a:hover {
+        color: #fff;
+        font-weight: bold;
+        border-radius: 50px;
+        background: #25C18D;
+    
+    }
+    
+    ul.mainMenu li ul.innerUl li a:focus:after,
+    ul.mainMenu li ul.innerUl li a:hover:after {
+        content: unset;
+    }
+    
+    ul.mainMenu .child:focus {
+        display: block;
+    }
+    
+    nav div.navApp {
+        width: 120px;
+        height: 40px;
+        float: right;
+        line-height: 40px;
+        text-align: center;
+        background: #fff;
+        border-radius: 50px;
+        font-size: 17px;
+        font-weight: bold;
+        border: 1px solid #fff;
+        z-index: 10;
+        outline: 1px solid #25C18D;
+    
+    }
+    nav div.navApp a {
+        color: #25C18D;
+    
+    }
+    
+    .head_bottomCover {
+        position: absolute;
+        width: 100%;
+        height: 342px;
+        top: -252px;
+        left: 0;
+        background-color: #fff;
+    }
+    .head_bottomCover:hover,
+    li.child:focus-within ~ .head_bottomCover,
+    li.child:hover ~ .head_bottomCover {
+        opacity: 1;
+        top: 0;
+    }
+    
+    .head_bottomCover:hover .headerImg,
+    li.child:focus-within ~ .head_bottomCover .headerImg,
+    li.child:hover ~ .head_bottomCover .headerImg {
+        margin: 140px auto 0;
+        opacity: 1;
+    }
+    
+    .headerImg {
+        width: 1304px;
+        margin: 140px auto 0;
+        height: 110px;
+        opacity: 0;
+        background: url("./images/_header_banner_bccard.png") 77px center / contain no-repeat;
+    }
+    
+    /* 헤더끝 */
+    section {
+        padding: 130px 0 200px;
+    }
+    
+    .sectionWrap {
+        width: 1114px;
+        margin: 0 auto;
+    }
+
+    section h1 {
+        font-size: 50px;
+    }
+    .contTopMenu{
+        display: flex;
+        margin: 50px 0 30px 0;
+    }
+
+    .contTopMenu li{
+        margin: 0px 30px 0 0;
+    }
+    .contTopMenu li.on{
+        border-bottom: 3px solid  #333;
+        font-weight: bold;
+    }
+    .contTopMenu li.on a{
+        color: #333;
+    }
+
+    .contTopMenu li a{
+        color: #8d8d8d;
+        font-size: 25px;
+
+    }
+
+    .custCon_Top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .custCon_Top .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        height: 220px;
+        padding: 0px 160px 0 50px;
+        border-radius: 23px;
+        background: #F9FAFC;
+    }
+
+    .custCon_Top .left p:first-child {
+        font-size: 23px;
+        padding: 0 0 0px 0;
+    }
+    .custCon_Top .left p:last-child {
+        font-size: 41px;
+        font-weight: bold;
+    }
+
+    .custCon_Top .right {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 80px;
+        height: 220px;
+        padding: 0 70px 0 70px;
+        border-radius: 23px;
+        border: 2px solid #bfbfbf;
+        box-sizing: border-box;
+    }
+    .custCon_Top .right .rightTitle {
+        text-align: center;
+        font-weight: bold;
+        font-size: 26px;
+    }
+
+    .custCon_Top .right .rightCon {
+        font-size: 20px;
+    }
+
+    .custCon_Top .right .rightCon ul li {
+        list-style-type:initial;
+        list-style-position: outside;
+        margin: 10px 0;
+    } 
+
+    .custCon_Cetner{
+        background: #F9FAFC;
+        padding: 50px 0;
+        margin: 50px 0 0 0;
+    }
+
+    .center_title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .centerUl {
+        margin: 20px 0;
+    }
+    .custCon_Cetner .sectionWrap>p,
+    .centerUl p {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    .centerUl li {
+        list-style-type:initial;
+        list-style-position: outside;
+        margin: 10px 0 10px 50px;
+        font-size: 20px;
+    } 
+    .custCon_Cetner .gridBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    .gridBox div {
+        text-align: center;
+        padding: 10px 20px;
+        border: 2px solid #c9c9c9;
+        border-radius: 10px;
+        background: #fff;
+    }
+    .gridBox div :nth-child(1) {
+        font-size: 20px;
+    }
+    .gridBox div :nth-child(2) {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+
+    
+    
