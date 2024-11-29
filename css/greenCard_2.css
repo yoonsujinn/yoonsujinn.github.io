@@ -177,7 +177,7 @@
         height: 220px;
         padding: 0px 160px 0 50px;
         border-radius: 23px;
-        background: #F9FAFC;
+        background: #f2f2f2;
     }
 
     .custCon_Top .left p:first-child {
@@ -218,7 +218,7 @@
     } 
 
     .custCon_Cetner{
-        background: #F9FAFC;
+        background: #f2f2f2;
         padding: 50px 0;
         margin: 50px 0 0 0;
     }
@@ -255,10 +255,10 @@
         border-radius: 10px;
         background: #fff;
     }
-    .gridBox div :nth-child(1) {
-        font-size: 20px;
+    .gridBox div >:nth-child(1) {
+        font-size: 17px;
     }
-    .gridBox div :nth-child(2) {
+    .gridBox div p a {
         font-size: 20px;
         font-weight: bold;
     }
