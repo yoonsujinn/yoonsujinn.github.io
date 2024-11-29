@@ -62,11 +62,13 @@
     .contTopMenu li.on a{
         color: #333;
     }
-
     .contTopMenu li a{
         color: #8d8d8d;
         font-size: 25px;
+    }
 
+    .custContent {
+        opacity: 0;
     }
 
     .custCon_Top {
