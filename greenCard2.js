@@ -1,7 +1,7 @@
 
 let contTopMenuLi = document.querySelectorAll('.contTopMenu li');
-let custContent_1 = document.querySelectorAll('.custContent_1');
-let custContent_2 = document.querySelectorAll('.custContent_2');
+let custContent_1 = document.querySelector('.custContent_1');
+let custContent_2 = document.querySelector('.custContent_2');
 
 contTopMenuLi.forEach(element => {
     element.addEventListener('click', function (e) {
@@ -10,12 +10,13 @@ contTopMenuLi.forEach(element => {
         element.classList.add('on')
         if (contTopMenuLi[0].classList.contains('on')) {
             console.log('11111111111')
-            console.log(custContent_2)
-
-            custContent_2.classList.remove('on')
             custContent_1.classList.add('on')
+            custContent_2.classList.remove('on')
         } else if (contTopMenuLi[1].classList.contains('on')) {
-            console.log('2222222222')
+            custContent_2.classList.add('on')
+            custContent_1.classList.remove('on')
+
+
 
 
         }
