@@ -247,15 +247,42 @@ table td {
 .listWrap {
     margin: 50px 0 0 0;
 }
-.listWrap {
+
+.listWrap summary {
     display: flex;
+    justify-content: space-between;
 }
+
 .listWrap .title {
     font-weight: bold;
 }
-.listWrap > p {
-    width: 30px;
-    height: 30px;
+
+.listWrap summary>p {
+    position: relative;
+    width: 170px;
+    height: 100%;
+}
+
+.listWrap summary>p.type1::before {
+    content: '그린카드 안내';
+}
+
+.listWrap summary>p.type2::before {
+    content: '에코머니 적립/사용';
+}
+
+.listWrap summary>p.type3::before {
+    content: '홈페이지 문의';
+}
+
+.listWrap summary>p::after {
+    content: '';
+    position: absolute;
+    left: 87%;
+    top: 0%;
+    width: 23px;
+    height: 23px;
     outline: 1px solid;
+    rotate: 90deg;
     background: url(../images/icon/icon-arrow-darkgray.svg)center / contain no-repeat;
 }
