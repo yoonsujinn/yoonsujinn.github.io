@@ -222,7 +222,6 @@ li.child:hover ~ .head_bottomCover .headerImg {
 footer {
     width: 100%;
     border-top: 1px solid#c9c9c9;
-    background-color: #F9FAFC;
 }
 
 .footContainer {
@@ -264,5 +263,6 @@ footer {
 
 .footContainer ul li a{
     font-size: 15px;
+    color: #111;
 }
 

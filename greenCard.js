@@ -28,6 +28,10 @@ const motions = {
     6: {
         start: page6_motion,
         end: page6_motion_exit,
+    },
+    7: {
+        start: page7_motion,
+        end: page7_motion_exit,
     }
 };
 
@@ -187,10 +191,19 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                 });
             },30);
         }
+        if (scrollPosition > scHeight * 4) {
+            setTimeout(() => {
+                window.scroll({
+                    top: scHeight * 5 + 173,
+                    behavior: 'smooth'
+                });
+            }, 30);
+        }
+  
     }else if( scrollXY < 50) { //올라갈때
-        console.log(scHeight,'화면높이');
-        console.log(scrollPosition,'현재높이');
-        console.log('-------------------------------')
+        // console.log(scHeight,'화면높이');
+        // console.log(scrollPosition,'현재높이');
+        // console.log('-------------------------------')
             if(scrollPosition == scHeight) {
                 setTimeout(() => {
                     window.scroll({
@@ -230,7 +243,8 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                         behavior: 'smooth' 
                     });
                 },30);
-            }else if(scrollPosition == scHeight*6) {
+            }else if(scrollPosition > scHeight*5) {
+                // 여기가 푸터
                 setTimeout(() => {
                     window.scroll({
                         top: scHeight*5, 
@@ -238,7 +252,8 @@ let scrollPosition = window.scrollY; // 스크롤 현재 위치 확인
                     });
                 },30);
             }
-            
+  
+
     }
 }, { passive: false });
 
@@ -266,6 +281,14 @@ window.addEventListener("scroll",function(event) {
                 if(scrollPosition == scHeight*4) {
                     motions[i].end();
                     motions[5].start();
+                }
+                if (scrollPosition == scHeight * 5) {
+                    motions[i].end();
+                    motions[6].start();
+                }
+            if (scrollPosition > scHeight * 5 && scrollPosition < scHeight * 6) {
+                    motions[i].end();
+                    motions[7].start();
                 }
             }
         });
@@ -311,7 +334,7 @@ window.addEventListener("scroll",function(event) {
         console.log('4페이지 나가기')
     }
     function page5_motion() {
-        // console.log('5페이지 도착!~~!')
+        console.log('5페이지 도착!~~!')
     }
     function page5_motion_exit() {
         console.log('5페이지 나가기')
@@ -321,6 +344,14 @@ window.addEventListener("scroll",function(event) {
     }
     function page6_motion_exit() {
         console.log('6페이지 나가기')
+    }
+
+    function page7_motion() {
+        console.log('푸터터도착!~~!')
+    }
+
+    function page7_motion_exit() {
+        console.log('푸터 나가기기!~~!')
     }
 
 
