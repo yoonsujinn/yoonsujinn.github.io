@@ -82,6 +82,32 @@ let section_3 = document.querySelector('.section_3');
 
         },4000)
 
+        // section5 2초에 한번씩 이미지 슬라이드!
+
+let sc5_imgs = document.querySelectorAll('.sc5_slideWrap [class*="sc5_"]'); 
+let sc5_slideWrapDiv = document.querySelector('.sc5_slideWrap')
+setInterval(function(){
+    let slideDel_1 = sc5_imgs[0]
+    let slideDel_2 = sc5_imgs[1]
+    let slideDel_3 = sc5_imgs[2]    
+    let newDiv_1 = document.createElement('div')
+                setTimeout(function () {
+                    slideDel_1.style.left = "-50%"
+                    slideDel_2.style.left = "0%"
+                    slideDel_3.style.left = "50%"
+                    setTimeout(function () {
+                        let delClass = slideDel_1.className;
+                        let delClassTxt = slideDel_1.innerHTML;
+                        slideDel_1.remove()
+                        sc5_slideWrapDiv.append(newDiv_1);
+                        newDiv_1.classList.add(delClass)
+                        newDiv_1.innerHTML = delClassTxt;
+                        sc5_imgs = document.querySelectorAll('.sc5_slideWrap [class*="sc5_"]'); 
+                    }, 1000)
+                }, 2000)
+            },3000)
+                
+
         
     let section3_headText = document.querySelector('.section3_headText')
     let section3_mainText = document.querySelector('.section3_mainText')
@@ -315,43 +341,43 @@ window.addEventListener("scroll",function(event) {
     }
 
     function page2_motion() {
-        console.log('2페이지 도착!~~!')
+        // console.log('2페이지 도착!~~!')
     }
     function page2_motion_exit() {
-        console.log('2페이지 나가기')
+        // console.log('2페이지 나가기')
     }
     
     function page3_motion() {
-        console.log('3페이지 도착!~~!')
+        // console.log('3페이지 도착!~~!')
     }
     function page3_motion_exit() {
-        console.log('3페이지 나가기')
+        // console.log('3페이지 나가기')
     }
     function page4_motion() {
-        console.log('4페이지 도착!~~!')
+        // console.log('4페이지 도착!~~!')
     }
     function page4_motion_exit() {
-        console.log('4페이지 나가기')
+        // console.log('4페이지 나가기')
     }
     function page5_motion() {
-        console.log('5페이지 도착!~~!')
+        // console.log('5페이지 도착!~~!')
     }
     function page5_motion_exit() {
-        console.log('5페이지 나가기')
+        // console.log('5페이지 나가기')
     }
     function page6_motion() {
-    console.log('6페이지 도착!~~!')
+    // console.log('6페이지 도착!~~!')
     }
     function page6_motion_exit() {
-        console.log('6페이지 나가기')
+        // console.log('6페이지 나가기')
     }
 
     function page7_motion() {
-        console.log('푸터터도착!~~!')
+        // console.log('푸터터도착!~~!')
     }
 
     function page7_motion_exit() {
-        console.log('푸터 나가기기!~~!')
+        // console.log('푸터 나가기기!~~!')
     }
 
 
