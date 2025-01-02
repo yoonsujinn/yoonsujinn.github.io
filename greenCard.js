@@ -86,25 +86,37 @@ let section_3 = document.querySelector('.section_3');
 
 let sc5_imgs = document.querySelectorAll('.sc5_slideWrap [class*="sc5_"]'); 
 let sc5_slideWrapDiv = document.querySelector('.sc5_slideWrap')
-setInterval(function(){
-    let slideDel_1 = sc5_imgs[0]
-    let slideDel_2 = sc5_imgs[1]
-    let slideDel_3 = sc5_imgs[2]    
-    let newDiv_1 = document.createElement('div')
-                setTimeout(function () {
-                    slideDel_1.style.left = "-50%"
-                    slideDel_2.style.left = "0%"
-                    slideDel_3.style.left = "50%"
-                    setTimeout(function () {
-                        let delClass = slideDel_1.className;
-                        let delClassTxt = slideDel_1.innerHTML;
-                        slideDel_1.remove()
-                        sc5_slideWrapDiv.append(newDiv_1);
-                        newDiv_1.classList.add(delClass)
-                        newDiv_1.innerHTML = delClassTxt;
-                        sc5_imgs = document.querySelectorAll('.sc5_slideWrap [class*="sc5_"]'); 
-                    }, 1000)
-                }, 2000)
+let slideDel_1 = sc5_imgs[0]
+let slideDel_2 = sc5_imgs[1]
+let slideDel_3 = sc5_imgs[2]
+let newDiv_1 = document.createElement('div')
+let delClass = slideDel_1.className;
+let delClassTxt = slideDel_1.innerHTML;
+
+    setInterval(function(){
+        slideDel_1.style.left = "-50%"
+        slideDel_2.style.left = "0%"
+        slideDel_3.style.left = "50%"
+            setTimeout(function () {
+                console.log('222222222')
+                slideDel_1.remove()
+                sc5_slideWrapDiv.append(newDiv_1);
+                newDiv_1.classList.add(delClass)
+                sc5_imgs = document.querySelectorAll('.sc5_slideWrap [class*="sc5_"]'); 
+                slideDel_1 = sc5_imgs[0]
+                slideDel_2 = sc5_imgs[1]
+                slideDel_3 = sc5_imgs[2]
+                console.log(slideDel_1)
+                console.log(slideDel_2)
+                console.log(slideDel_3)
+
+            }, 1000)
+
+                //     setTimeout(function () {
+                
+                //         newDiv_1.innerHTML = delClassTxt;
+                //         sc5_imgs = document.querySelectorAll('.sc5_slideWrap [class*="sc5_"]'); 
+                //     }, 1000)
             },3000)
                 
 
