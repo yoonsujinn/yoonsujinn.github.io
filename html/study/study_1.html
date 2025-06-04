@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>studyPage</title>
+    <link rel="stylesheet" href="./study_1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="./study_1.js"></script>
+  </head>
+  <body>
+    <a class="home" href="../../index.html" target="_blank">HOME</a>
+
+
+    <section id="left">
+      <nav>
+        <div class="nav_2">
+          <ul>
+            <li id="nav_2_li_1" class="nav_2_li active_1">Html & Css</li>
+            <li id="nav_2_li_2" class="nav_2_li">JavaScript</li>
+          </ul>
+        </div>
+
+      </nav>
+
+    </section>
+    <section id="right">
+      <h2 class="study_title"> Study #Html & Css</h2>
+
+        <ul class="bar active_5" id="bar_1">
+          <li class="study_li" id="study_li_1"># Flex</li>
+          <li class="study_li" id="study_li_2"># Grid</li>
+          <li class="study_li" id="study_li_3"># BackGround</li>
+          <li class="study_li" id="study_li_4"># animation</li>
+        </ul>
+        <ul class="bar" id="bar_2">
+          <li class="study_li" id="study_li_5"># JavaScript </li>
+          <li class="study_li" id="study_li_6"># Window </li>
+          <li class="study_li" id="study_li_7"># Scroll <li>
+        </ul>
+
+        <div class="right_con_wrap" id="right_con_wrap_1" >
+          <!-- 플렉스 공부 -->
+          <div class="right_con" id="right_con_1">
+            <div class="scroll_topp"></div>
+            <h3>CSS flexible Box</h3>
+                <p>
+                flex는 요소의 크기가 불분명하거나 동적인 경우에도
+                각 요소를 정렬할 수 있는 효율적인 방법을 제공한다.
+                <br/>
+                플렉스는 2가지의 개념으로 나누어 지며,
+                첫번째는 container, 두번째는 items 이다.
+                <br/>
+                container는 items를 감싸는 부모요소이며,
+                각 items를 정렬하기 위해서는 container가 필요하다.
+                <br/>
+                주의할부분은 container와 item에 적용하는 속성이
+                구분되어 있다는 점 이다.<br/><br/>
+                  <b>
+                  [container] : display / flex-flow / justify-content<br/>
+                  [items] : order / flex /align-self </b>
+                  <br/><br/>
+                등을 사용할 수 있다.
+                </p>
+                <h3>[Display] - CONTAINER 속성</h3>
+            <p>
+              display 속성으로 flex container를 정의할 수 있다.<br/>
+                <b>
+                flex - block 특성의 flex container를 설정,<br/>
+                inline-flex - inline 특성의 flex container를 설정
+                </b>
+              <br/>
+                <b style="color:red;">
+                *items에는 영향을 주지않는다.
+                display 속성은container에만 인라인,블록 속성을 주는것임.*
+                </b>
+            </p>
+
+            <div class="container_1 container_1_1 container">inline-flex</div>
+            <div class="container_1 container_1_1 container">inline-flex</div>
+            <div class="container_1 container_1_1 container">inline-flex</div>
+            <div class="container_1 container_1_1 container">inline-flex</div>
+            <div class="container_1 container_1_2 container">flex</div>
+            <div class="container_1 container_1_2 container">flex</div>
+            <div class="container_1 container_1_2 container">flex</div>
+            <div class="container_1 container_1_2 container">flex</div>
+
+
+                  <h3>[flex-flow]</h3>
+                  <p>
+                    <b>flex items의 주 축을 설정하고 imtes의 여러줄 묶음도 설정한다.</b>
+                  </p>
+                  <p>
+                    <b>
+                    [flex-direction] : items의 주 축을 설정<br/>
+                    [flex-wrap] : items의 여러줄 묶음(줄바꿈) 설정
+                    </b>
+                    <br/>
+                  </p>
+                <h2>row : items의 수평축(왼쪽>오른쪽으로 표시) (기본값)</h2>
+                  <div class="container_2 container_2_1 container">
+                    <div class="items items_1">1</div>
+                    <div class="items items_2">2</div>
+                    <div class="items items_3">3</div>
+                    <div class="items items_4">4</div>
+                    <div class="items items_5">5</div>
+                    <div class="items items_6">6</div>
+                  </div>
+                  <h2>row-reverse : items를 row 반대축으로 표시</h2>
+                  <div class="container_2 container_2_2 container">
+                    <div class="items items_1">1</div>
+                    <div class="items items_2">2</div>
+                    <div class="items items_3">3</div>
+                    <div class="items items_4">4</div>
+                    <div class="items items_5">5</div>
+                    <div class="items items_6">6</div>
+                  </div>
+
+                  <h2>column : items를 수직축(위-아래로) 표시</h2>
+                  <div class="container_2 container_2_3 container">
+                    <div class="items items_1">1</div>
+                    <div class="items items_2">2</div>
+                    <div class="items items_3">3</div>
+                    <div class="items items_4">4</div>
+                    <div class="items items_5">5</div>
+                    <div class="items items_6">6</div>
+                  </div>
+
+
+                  <h2>column-reverse : items를 column의 반대축으로 표시</h2>
+                  <div class="container_2 container_2_4 container">
+                    <div class="items items_1">1</div>
+                    <div class="items items_2">2</div>
+                    <div class="items items_3">3</div>
+                    <div class="items items_4">4</div>
+                    <div class="items items_5">5</div>
+                    <div class="items items_6">6</div>
+                  </div>
+
+                  <p>row값은 items를 수평축으로 표시하므로 주 축이 수평,수직<br/>
+                  column은 items를 수직축으로 표시하므로 주 축이 수직, 수평</p>
+
+            <h3>flex-wrap </h3>
+            <p>
+              items의 여러 줄 묶음 (줄 바꿈) 을 설정합니다.<br/><br/>
+              기본적으로 items는 한줄에서만 표시되고 줄바꿈 되지 않음.<br/>
+              하지만 flew-wrap옵션 사용시 지정된 크기(width,height)를 무시하고 한 줄 안에서만 가변합니다.<br/>
+              items를 줄 바꿈 하려면 <b>wrap</b>을 사용해야 함..<br/>
+            </p>
+
+            <h2>nowrap : 모든 items들 을 여러줄로 묶지 않음(한줄표시)</h2>
+            <div class="container_3 container_3_1 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+            </div>
+
+            <h2>wrap : 모든 items들을 여러 줄로 묶음</h2>
+            <div class="container_3 container_3_2 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+
+            </div>
+            <h2>
+              wrap-reverse : 모든 items를 wrap의 역 방향으로 여러줄로 묶음
+            </h2>
+            <div class="container_3 container_3_3 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+            </div>
+            <h3>justify-content</h3>
+            <p>주 축의 정렬 방법을 설정합니다.<br/></p>
+            <h2>flex-start: items를 시작점으로 정렬.(기본값)</h2>
+            <div class="container_2 container_4_1 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+            </div>
+
+            <h2>flex-end: items를 끝점으로 정렬</h2>
+            <div class="container_2 container_4_2 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+            </div>
+
+            <h2>center: items를 가운데 정렬</h2>
+            <div class="container_2 container_4_3 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+            </div>
+
+            <h2>space-between: 시작 item은 시작점에, 마지막item은 끝점에 정렬되고,<br/>
+            나머지 items는 사이에 고르게 정렬됨.</h2>
+            <div class="container_2 container_4_4 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+            </div>
+
+            <h2>space-around: 균등한 여백을 포함하여 정렬</h2>
+            <div class="container_2 container_4_5 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+            </div>
+
+            <h3>align-content</h3>
+            <p>교차축의 정렬 방법을 설정.<br/>
+            위/아래 여백을 설정하는 옵션이기 떄문에 flex wrap을 사용하여
+            items가 2줄 이상이고 여백이 있을 경우에만 사용 가능.</p>
+
+            <h2>stretch: 교차축을 채우기위해 items를 늘림(기본값)</h2>
+            <div class="container_3 container_5_1 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+
+            </div>
+
+            <h2>flex-start: items를 시작점으로 정렬</h2>
+            <div class="container_3 container_5_2 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+
+            </div>
+
+            <h2>flex-end: items를 끝점으로 정렬</h2>
+            <div class="container_3 container_5_3 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+            </div>
+
+            <h2>flex-center: items를 가운데 정렬</h2>
+            <div class="container_3 container_5_4 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_11"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_5"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_6"></div>
+            </div>
+
+            <h2>space-between: 시작 item은 시작점에, 마지막 tem은 끝점에 정렬되고,
+              나머지 items는 사이에 고르게 정렬됨</h2>
+            <div class="container_3 container_5_5 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+            </div>
+
+            <h2>space-around:items를 균둥한 여백을 포함하여 정렬</h2>
+
+            <div class="container_3 container_5_6 container">
+              <div class="items items_1"></div>
+              <div class="items items_2"></div>
+              <div class="items items_3"></div>
+              <div class="items items_4"></div>
+              <div class="items items_5"></div>
+              <div class="items items_6"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+              <div class="items items_7"></div>
+              <div class="items items_8"></div>
+              <div class="items items_9"></div>
+              <div class="items items_10"></div>
+              <div class="items items_11"></div>
+            </div>
+
+            <h3> flex items 옵션</h3>
+
+            <p>
+            order : flex item의 순서를 설정<br/>
+            flex :  flex-grow, flex shrink, flex-basis의 단축 속성<br/>
+            flex-grow : flex item의 증가 너비 비율을 설정<br/>
+            flex-shrink : flex imtem의 감소 너비 비율을 설정<br/>
+            flex-basis : flex item의 (공간 배분 전) 기본 너비 설정<br/>
+            align-center: 교차 축(cross-axis)에서 item의 정렬 방법을 설정<br/>
+            </p>
+
+            <h2>order : flex item의 순서를 설정</h2>
+            <div class="container_2 container_6 container">
+              <div class="items items_1">1</div>
+              <div class="items items_2">2</div>
+              <div class="items items_3">3</div>
+              <div class="items items_4">4</div>
+              <div class="items items_5">5</div>
+              <div class="items items_6">6</div>
+            </div>
+
+            <h2>flex-grow : flex item의 증가 너비 비율을 설정<br/>
+            숫자가 커지면 커질수록 박스가 커지는 옵션임.</h2>
+            <div class="container_2 container_6_1 container">
+              <div class="items items_1">1000</div>
+              <div class="items items_2">25</div>
+              <div class="items items_3">80</div>
+              <div class="items items_4">150</div>
+              <div class="items items_5">3</div>
+              <div class="items items_6">55</div>
+            </div>
+
+            <h2>flex-shrink	 : flex items 감소 너비 비율을 설정<br/>
+            숫자가 커지면 커질수록 박스가 작아지는 옵션임.</h2>
+            <div class="container_2 container_6_2 container">
+              <div class="items items_1">1000</div>
+              <div class="items items_2">2000</div>
+              <div class="items items_3">30</div>
+              <div class="items items_4">500</div>
+              <div class="items items_5">200</div>
+              <div class="items items_6">88</div>
+            </div>
+
+          </div>
+
+          <!-- 그리드 공부 -->
+          <div class="right_con" id="right_con_2">
+            <div class="scroll_topp2"></div>
+            <h3> CSS Grid</h3>
+            <p>
+              <b>css grid는 2차원 행과 열 의 레이아웃 시스템을
+              제공한다.</b><br/><br/>
+              <img src="./study_img/grid.jpg" alt="gr"><br/><br/>
+
+              <b>grid container</b>:display:grid를 적용하는 grid의 전체영역<br/>
+              grid 컨테이너 안의 요소들이 grid 규칙이 영향을 받아 정렬된다고 생각하면 됨.<br/><br/>
+
+
+              <b>grid item</b>:grid 컨테이너의 자식요소들.<br/><br/>
+
+              <b>grid track</b>:행(row) 또는 열(column)<br/><br/>
+
+              <b>grid cell</b>:grid의 한 칸을 가리키는 말임.<br/>
+              div와 같은 실제 html요소는 그리드아이템이고,<br/>
+              grid의 가상의 칸(틀?)임.<br/><br/>
+
+              <b>grid Line</b>:grid셀을 구분하는 선<br/>
+              <b>grid number</b>:grid라인의 각 번호<br/>
+              <b>grid gap</b>:grid 셀 사이의 간격<br/>
+              <b>grid area</b>grid라인으로 둘러쌓인 사각형 영역 / 그리드셀의 집합
+
+            </p>
+            <h3>display</h3>
+            <p>
+            grid container에 필수로 작성해야하는 옵션.<br/>
+            <b>grid:</b>block특성의 grid container를 정의<br/>
+            <b>inrine-grid:</b>inline 특성의 container를 정의함.
+            </p>
+
+            <h3>grid-template-rows</h3>
+            <p>
+              명시적 행(track) 의 크기를 정의함.<br/>
+              line의 이름도 정의할 수 있음.<br/>
+              <b>fr</b>:(fraction,공간 비율) 단위를 설정할 수 있음.<br/>
+              <b>repeat()</b> 함수를 사용할 수 있음.<br/>
+              사용방법은 grid-temokate-columns 와 같음.<br/>
+            </p>
+
+            <h2>grid-template-rows/column</h2>
+            <h1>grid-template-rows: 50px 30px 60px;</h1>
+            <div class="grid_container grid_container_1">
+              <div class="grid_items items_1">1</div>
+              <div class="grid_items items_2">2</div>
+              <div class="grid_items items_3">3</div>
+              <div class="grid_items items_4">4</div>
+              <div class="grid_items items_5">5</div>
+            </div>
+
+            <h2>grid-template-rows:repeat()옵션</h2>
+            <p>repeat함수는 repeat(n,nnpx/%); 형식으로 사용</p>
+            <h1>		grid-template-rows: repeat(3, 100fr);</h1>
+            <div class="grid_container grid_container_2">
+              <div class="grid_items items_1">1</div>
+              <div class="grid_items items_2">2</div>
+              <div class="grid_items items_3">3</div>
+            </div>
+
+            <h2>grid-template-rows:repeat()옵션-2</h2>
+            <p>
+              repeat함수는 2번째 인수를 반복함.
+              grid_template_columns:repeat(4,1fr,2fr,3fr) 으로 사용하면<br/>
+              1fr 2fr 3fr 1fr 2fr 3fr 1fr 2fr 3fr 1fr 2fr 3fr;<br/>
+              위와 같은 반복 가능<br/>
+            </p>
+            <h1>
+              -grid-template-rows: repeat(3, 30px 11px 30px);<br/>
+              -grid-template-columns:repeat(3, 40px);
+            </h1>
+              <div class="grid_container grid_container_3">
+                <div class="grid_items items_1">1</div>
+                <div class="grid_items items_2">2</div>
+                <div class="grid_items items_3">3</div>
+                <div class="grid_items items_4">1</div>
+                <div class="grid_items items_5">2</div>
+                <div class="grid_items items_6">3</div>
+                <div class="grid_items items_7">1</div>
+                <div class="grid_items items_8">2</div>
+                <div class="grid_items items_9">3</div>
+              </div>
+
+              <h3>gap , column-gap , gap</h3>
+              <p>그리드 셀 사이의 간격을 설정</p>
+              <p><b>row-gap:10px - row 간격<br/>
+              column-gap:20px - column-gap 간격</b><br/>
+              ie에서는 gap의 대체 속성이 없음.
+              </p>
+
+
+                <div class="grid_container grid_container_4">
+                  <div class="grid_items items_1"></div>
+                  <div class="grid_items items_2"></div>
+                  <div class="grid_items items_3"></div>
+                  <div class="grid_items items_4"></div>
+                  <div class="grid_items items_5"></div>
+                  <div class="grid_items items_6"></div>
+                  <div class="grid_items items_7"></div>
+                  <div class="grid_items items_8"></div>
+                  <div class="grid_items items_9"></div>
+                </div>
+
+                <h3>grid-template-areas</h3>
+                <p>각 영역에 이름을 붙이고 붙인 이름으로 배치할 수 있다.</p>
+                <p>
+                  grid의 컨테이너에 "grid-template-areas" 속성을 준 뒤 <br>
+                  header header header<br>
+                  . body .<br>
+                  bottom . .<br>
+                  3x3일 경우 위 형식으로 구조를 정의 할 수 있다.<br>
+                  컨테이너 안의 요소들에게는<br>
+                  "grid-area:header","grid-area:body","grid-area:bottom"<br>
+                  형식으로 이름을 정의해줘야 한다!<br><br><br>
+                  빈 공간은 . 또는 none으로 비워줄 수 있다.
+                  <br><br>
+
+
+              </p>
+          </div>
+          <!-- 백그라운드 속성 -->
+          <div class="right_con" id="right_con_3">
+            <div class="scroll_topp3"></div>
+            <p>태그의 배경을 지정하는 백그라운드 속성은 쉬운거같으면서 은근히 어렵다.
+              border 속성처럼 상세 속성을 한번에 사용할 수 있다.<br/>
+              background: yellow url('./images/attach/google.png') no-repeat center center;<br/>
+              color / image / repeat / position-y / position-x 순 이다.<br/>
+            </p>
+
+            <h3>background 세부 속성</h3>
+            <p>
+              <b>background-color: </b> 배경의 색상을 지정한다.<br/>
+              <b>background-image: </b>배경 이미지를 지정한다. /이미지 경로설정은 url();<br/>
+
+                <b>★ background-position: </b>배경이미지의 위치를 지정한다.<br/>
+                  <h2>background-position</h2>
+                <p>
+                  배경 이미지의 초기 위치를 지정한다.
+                  background-position-x(가로), background-position-y(세로)
+                  따로따로 지정할 수 있다.
+                </p>
+                  <p>background-position: top;</p>
+                  <div class="backback" id="backback_1"></div>
+                  <p>background-position: left;</p>
+                  <div class="backback" id="backback_2"></div>
+                  <p>background-position: center;</p>
+                  <div class="backback" id="backback_3"></div>
+                  <p>background-position: 25% 75%;</p>
+                  <div class="backback" id="backback_4"></div>
+                <p>
+                  <b>background-repeat: </b> 배경 이미지의 반복여부를 지정한다.<br/>
+                  <b>background-size: </b> 배경 이미지 사이즈를 지정한다.px과 %로 지정할 수 있다.<br/>
+                  <b>★ background-clip: </b>배경 이미지가 border의 침범 여부를 선택할 수 있다.<br/>
+                </p>
+
+                <h2>background-clip</h2>
+                <p>border-box / padding-box / content-box 속성이 있다.</p>
+                <p>border-box : </p>
+                <div class="backback" id="backback_5"></div>
+                <p>padding-box : </p>
+                <div class="backback" id="backback_6"></div>
+                <p>content-box : </p>
+                <div class="backback" id="backback_7"></div>
+              <b>background-attachment: </b> 배경 이미지의 고정 여부를 선택할 수 있다.<br/>
+            </p>
+          </div>
+
+          <!-- animation공부 -->
+          <div class="right_con" id="right_con_4">
+            <div class="scroll_topp4"></div>
+            <p>css요소에서의 animation</p>
+            <p>
+              <b>animation-name</b> : 애니메이션의 이름을 지어준다. <br>
+              <b>animation-duration </b> :  애니메이션 지속 시간을 정해준다.<br>
+              <b>@keyframes </b> 애니메이션을 지속하는 시간에 동작을 정해준다..<br>
+            </p>
+            <img src="./study_img/ani.jpg" alt="ani" id="ani">
+
+            <p>
+              <b>animation-delay</b> 애니메이션 시작하기 전 딜레이 시간을 지정 한다..<br>
+              <b>animation-iteration-count</b> 애니메이션이 실행되어야 하는 시간을 설정한다.
+              "infinite" 옵션을 사용하여 애니메이션이 끝나지않도록 할 수 있다..<br>
+            </p>
+            <p>
+              <b>animation-timing-function</b> 애니메이션의 속도를 지정할 수 있다. 아래의 속성값이 있다..<br>
+              <b>ease</b> 빠르게시작하여 느려졌다가 다시 천천히 끝난다(기본값)..<br>
+              <b>linear</b> 처음부터 끝까지 동일한 속도이다..<br>
+              <b>ease-in</b> 느린 시작후 속도가 점차 빨라진다...<br>
+              <b>ease-out</b> 빠르게 시작한 후 점차 느려진다..<br>
+              <b>ease-in-out</b> 시작과 끝이 느리지만 중간 과정이 빠르다..<br>
+              <b>cubic-bezier(n,n,n,n)</b> 속도를 알아서 지정할 수 있다..<br>
+            </p>
+          </div>
+
+    <!-- 자바스크립트 기초 -->
+  <div class="right_con" id="right_con_5">
+    <div class="scroll_topp5"></div>
+    <h3>자바스크립트 요소의 선택</h3>
+    <p>
+      <b>getElementById</b> 메서드로 'id'요소를 선택할 수 있다.
+    </p>
+    <pre class="study_page_span">
+const element = document.getElementById('elementId');</pre>
+    <p>
+      <b>getElementsByClassName</b> 메서드로 'class'요소를 선택할 수 있다.
+    </p>
+    <pre class="study_page_span">
+const elements = document.getElementsByClassName('classname');</pre>
+    <p>
+      <b>getElementsByTagName</b> 메서드로 '태그' 요소를 선택할 수 있다..p/span 등
+    </p>
+    <pre class="study_page_span">
+const elements = document.getElementsByTagName('tagname');</pre>
+    <p>
+      <b>querySelector</b> 메서드로 'css선택자'의 첫번째 요소를 선택할 수 있다.
+    </p>
+    <pre class="study_page_span">
+const elements = documents = document.querySelector('cssSelector')</pre>
+    <p>
+      <b>querySelectolAll</b> 메서드로 'css선택자'의 '모든' 요소를 선택할 수 있다.
+    </p>
+    <pre class="study_page_span">
+const elements = documen.querySelectorAll('elementName');
+    </pre>
+
+  </div>
+    <!-- 자바스크립트 화면 크기 공부 -->
+  <div class="right_con" id="right_con_6">
+    <div class="scroll_topp6"></div>
+
+    <h3>window.innerWidth & window.innerHeight</h3>
+    <p>
+      자바스크립트에서 window 객체는 다양한 역할을 한다.
+      이 중 window.innerWidth와 window.innerHeight는
+      <b>현재 창의</b> 내부 넓이와 높이를 픽셀단위로 알 수 있다.
+            </p>
+        <pre class="study_page_span">
+    function updateScreenSize() {
+      // 변수를 선언한다.
+      var screenWidth = document.getElementById("screenWidth");
+      var screenHeight = document.getElementById("screenHeight");
+
+      // 현재 창의 넓이와 높이를 가져와서 해당 변수에 넣었다.
+      screenWidthElement.textContent = screenWidth;
+      screenHeightElement.textContent = screenHeight;
+    }
+    // 초기에 화면 크기 정보 업데이트
+    updateScreenSize();
+    // 브라우저 크기가 변경될 때마다 화면 크기 정보 업데이트
+    window.addEventListener("resize", updateScreenSize);</pre>
+          <p>
+            < 실행 결과 > <br>
+            화면 너비: <span id="screenWidth"></span>px,
+            화면 높이: <span id="screenHeight"></span>px
+          </p>
+          <p>
+            또한, 화면크기를 얻을때에는
+            초기 화면 크기정보를 업데이트 하기위해 updateScreenSize();
+            함수를 한번 더 호출하고, 사용자에 의해 브라우저 크기가
+            변경 될 수 있으므로 변경될때마다 화면의크기를 업데이트
+            해줄 수 있는 코드를 덧붙여줘야한다.
+          </p>
+        <pre class="study_page_span">
+          // 초기에 화면 크기 정보 업데이트
+          updateScreenSize();
+
+          // 브라우저 크기가 변경될 때마다 화면 크기 정보 업데이트
+          window.addEventListener("resize", updateScreenSize);</pre>
+</div>
+
+<!-- 스크롤 이벤트  -->
+<div class="right_con" id="right_con_7">
+  <div class="scroll_topp7"></div>
+  <h3>스크롤 이벤트 감지</h3>
+    <pre class="study_page_span">
+      window.addEventListener("scroll", function() {
+        // 스크롤 이벤트 실행시 사용하는 기본적인 코드다.
+        // 여기에 원하는 동작을 추가할 수 있다.
+    });
+    </pre>
+  <h3>현재 스크롤 위치 가져오기.</h3>
+    <pre class="study_page_span">
+      var scrollY = window.scrollY; // 수직 스크롤 위치
+      var scrollX = window.scrollX; // 수평 스크롤 위치
+    </pre>
+
+  <h3>스크롤 이벤트 막기</h3>
+    <pre class="study_page_span">
+      window.addEventListener("scroll", function(event) {
+      event.preventDefault(); // 스크롤 이벤트의 기본 동작을 막음
+  });</pre>
+  <h3>스크롤 이벤트 막기</h3>
+  <pre class="study_page_span">
+      window.addEventListener("scroll", function() {
+      var scrollPosition = window.scrollY;
+
+      if (scrollPosition > 500) {
+          // 스크롤 위치가 500px 이상인 경우
+          // 원하는 동작을 추가하면 된다.
+      }
+  });</pre>
+  <h3>스크롤 위치 조정하기.</h3>
+  <img src="./study_img/scrollto.jpg" alt="">
+  <p>scrollTo는 스크롤의 위치를 조정한다.</p>
+
+  </div>
+  <div class="right_con" id="right_con_8">right_con_8</div>
+
+
+  </div>
+
+
+          <!-- <div class="right_con" id="right_con_1">
+            right_condd_111 <br><br><br><br><br><br><br><br>
+            right_condd_111 <br><br><br><br><br><br><br><br>
+            right_condd_111 <br><br><br><br><br><br><br><br>
+            right_condd_111 <br><br><br><br><br><br><br><br>
+            right_condd_111 <br><br><br><br><br><br><<b></b>><br>
+            right_condd_111 <br><br><br><br><br><br><br><br>
+            right_condd_111 <br><br><br><br><br><br><br><br>
+          </div>
+          <div class="right_con" id="right_con_2">
+            right_condd_222 <br><br><br><br><br><br><br><br>
+            right_condd_222 <br><br><br><br><br><br><br><br>
+            right_condd_222 <br><br><br><br><br><br><br><br>
+            right_condd_222 <br><br><br><br><br><br><br><br>
+            right_condd_222 <br><br><br><br><br><br><<b></b>><br>
+            right_condd_222 <br><br><br><br><br><br><br><br>
+            right_condd_222 <br><br><br><br><br><br><br><br>
+          </div> -->
+          <!-- <div class="right_con" id="right_con_3">right_con_333</div>
+          <div class="right_con" id="right_con_4">right_con_444</div>
+          <div class="right_con" id="right_con_5">right_con_5</div>
+          <div class="right_con" id="right_con_6">right_con_6</div> -->
+        </div>
+
+
+
+    </section>
+
+
+  </body>
+</html>
