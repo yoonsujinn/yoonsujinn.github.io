@@ -1,0 +1,41 @@
+:root {
+  --brown_1: #a77b73;
+  --brown_2: #5d4336;
+  --white_1: #f8f3f3;
+  --white_2: #e6e3e1;
+  --white_3: #fefaf9;
+  --white_4: #f5f1ec;
+}
+
+#root,
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  line-height: 0;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}

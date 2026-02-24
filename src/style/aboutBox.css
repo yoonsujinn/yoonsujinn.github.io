@@ -1,0 +1,151 @@
+.aboutWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 90px 0 0 0;
+}
+
+.about {
+  color: var(--brown_1);
+}
+.aboutWrap > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99vw;
+  min-width: 1240px;
+  height: 14.5rem;
+  font-family: "MonaSans_SB";
+  font-size: 3.5rem;
+  color: var(--brown_1);
+  background: url(/src/assets/about/aboutBg2.png) center / 100%;
+}
+
+.aboutBoxWrap {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 10px;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  margin: 2rem 0;
+}
+.aboutBoxWrap > :not(:nth-child(4)) {
+  height: 13.8rem;
+}
+.aboutBoxWrap > :nth-child(1) {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+.aboutBoxWrap > :nth-child(2) {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+.aboutBoxWrap > :nth-child(3) {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+.aboutBoxWrap > :nth-child(4) {
+  grid-column: span 5;
+  grid-row: span 2;
+  height: 100%;
+}
+
+.aboutBoxWrap > :nth-child(5) {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+.aboutBoxWrap > :nth-child(6) {
+  grid-column: span 6;
+  grid-row: span 1;
+}
+
+.aboutImg {
+  background: url(../assets/about/aboutImg.jpg) center / 124% no-repeat;
+}
+
+.aboutBox {
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid var(--white_2);
+  box-shadow: 3px 5px 5px rgb(251 247 244);
+  font-family: "MonaSans_R", "NotoSans_R";
+}
+
+.aboutBox .aboxBoxTitle {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid var(--white_2);
+  gap: 7px;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.aboutBox .aboxBoxTitle .logo {
+  display: contents;
+  font-size: 30px;
+}
+.aboutBox .aboxBoxTitle .logo > {
+  display: block;
+}
+.aboutUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.aboutBox:not(.aboutBox_Skills) .aboutUl {
+  height: 100%;
+}
+
+.aboutBox:not(.aboutBox_experience) .aboutUl li {
+  margin: 0 0 0 20px;
+}
+
+.aboutUl li > p {
+  position: relative;
+  font-size: 1.2rem;
+  white-space: pre-line;
+}
+
+.aboutBox_Skills .aboutUl li > p {
+  font-weight: bold;
+}
+.aboutUl li > span {
+  font-size: 1.2rem;
+}
+
+.aboutBox:not(.aboutBox_experience) .aboutUl li p:after {
+  content: "";
+  position: absolute;
+  top: 42%;
+  left: -15px;
+  width: 5px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #a77b73;
+}
+.aboutBox_experience .aboutUl li {
+  display: flex;
+  gap: 10px;
+}
+
+.aboutBox_experience .aboutUl li span.dateWrap {
+  display: flex;
+  gap: 5px;
+}
+
+.aboutButtonWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
